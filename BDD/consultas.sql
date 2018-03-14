@@ -1,5 +1,3 @@
-Actualizar 
-
 Asignatura Correquisito
 
 Use ignug;
