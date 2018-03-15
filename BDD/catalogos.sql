@@ -1,41 +1,10 @@
 USE ignug;
 
-INSERT INTO `Asignatura` (`id`, `idMalla`, `codigo`, `nombre`, `nivel`, `idDocumentoPea`, `horasSemana`, `horasPractica`, `horasDocente`, `horasAutonomas`) VALUES
-(1, 1, 'DS0101', 'MATEMÁTICA DISCRETA', 1, 1, 4, NULL, NULL, NULL),
-(2, 1, 'DS0201', 'INTRODUCCIÓN AL DESARROLLO DE SOFTWARE', 1, 2, 6, NULL, NULL, NULL),
-(3, 1, 'DS0301', 'FUNDAMENTOS DE PROGRAMACIÓN', 1, 3, 8, NULL, NULL, NULL),
-(4, 1, 'DS0401', 'ANÁLISIS Y DISEÑO DE SISTEMAS', 1, 4, 5, NULL, NULL, NULL),
-(5, 1, 'DS0501', 'DESARROLLO DEL PENSAMIENTO', 1, 5, 3, NULL, NULL, NULL),
-(6, 1, 'DS0601', 'INGLÉS A1 (BÁSICO)', 1, 6, 4, NULL, NULL, NULL),
-(7, 2, 'MK0101', 'MATEMÁTICAS BÁSICAS', 1, 7, 4, NULL, NULL, NULL),
-(8, 2, 'MK0201', 'INFORMÁTICA BÁSICA DE NEGOCIOS ', 1, 8, 3, NULL, NULL, NULL),
-(9, 2, 'MK0301', 'TÉCNICAS EXPRESIÓN ORAL Y ESCRITA', 1, 9, 3, NULL, NULL, NULL),
-(10, 2, 'MK0401', 'FUNDAMENTOS DE ADMINISTRACIÓN', 1, 10, 3, NULL, NULL, NULL),
-(11, 2, 'MK0501', 'CONTABILIDAD GENERAL I', 1, 11, 3, NULL, NULL, NULL),
-(12, 2, 'MK0601', 'FUNDAMENTOS DE MARKETING', 1, 12, 3, NULL, NULL, NULL),
-(13, 2, 'MK0701', 'INGLÉS', 1, 13, 3, NULL, NULL, NULL),
-(14, 2, 'MK0801', 'DERECHO SOCIETARIO Y MERCANTIL', 1, 14, 3, NULL, NULL, NULL),
-(15, 3, 'DM0101', 'HISTORIA DE LA MODA Y TEXTILES', 1, 15, 2, NULL, NULL, NULL),
-(16, 3, 'DM0201', 'METODOLOGÍA DE LA INVESTIGACIÓN', 1, 16, 2, NULL, NULL, NULL),
-(17, 3, 'DM0301', 'ILUSTRACIÓN BÁSICA DE MODA', 1, 17, 5, NULL, NULL, NULL),
-(18, 3, 'DM0401', 'PATRONAJE Y CONFECCIÓN FEMENINA', 1, 18, 6, NULL, NULL, NULL),
-(19, 3, 'DM0501', 'EXPRESIÓN ORAL Y ESCRITA', 1, 19, 2, NULL, NULL, NULL),
-(20, 4, '1GT1CH01', 'LENGUAJE ORAL Y ESCRITO', 1, 20, 2, NULL, NULL, NULL),
-(21, 4, '2GT1CD02', 'HISTORIA DEL ECUADOR', 1, 21, 4, NULL, NULL, NULL),
-(22, 4, '3GT1CD02', 'GEOGRAFÍA TURÍSTICA ECUATORIANA', 1, 22, 4, NULL, NULL, NULL),
-(23, 4, '4GT1CD02', 'ECOLOGÍA DEL ECUADOR', 1, 23, 4, NULL, NULL, NULL),
-(24, 4, '5GT1CH01', 'REALIDAD NACIONAL EN EL SISTEMA TURÍSTICO ECUATORIANO', 1, 24, 2, NULL, NULL, NULL),
-(25, 4, '6GT1CH01', 'ÉTICA PROFESIONAL EN EL TURISMO', 1, 25, 2, NULL, NULL, NULL),
-(26, 4, '7GT1PR03', 'SISTEMA TURÍSTICO', 1, 26, 10, NULL, NULL, NULL),
-(27, 4, '8GT1PR02', 'INTRODUCCIÓN AL TURISMO Y HOTELERÍA', 1, 27, 4, NULL, NULL, NULL),
-(28, 4, '9GT1PR01', 'LEGISLACIÓN TURÍSTICA', 1, 28, 2, NULL, NULL, NULL),
-(29, 4, '11GT1CI02', 'IDENTIFICACIÓN DESCRIPTIVA DESTINOS TURÍSTICOS ACTUALES', 1, 29, 2, NULL, NULL, NULL),
-(30, 4, '10GT1PR05', 'FUNCIONAMIENTO Y DINÁMICA DEL TURISMO', 1, 30, 6, NULL, NULL, NULL);
-INSERT INTO `Carrera` (`id`, `resolucion`, `nombre`, `descripcion`, `idModalidad`, `idInstituto`, `coordinador`, `siglas`) VALUES
-(1, '1', 'TECNOLOGÍA SUPERIOR EN DESARROLLO DE SOFTWARE ', 'TECNOLOGÍA SUPERIOR EN DESARROLLO DE SOFTWARE ', 1, 1, 'Cristhian David Pazmiño Flores', 'DS'),
-(2, '2', 'MARKETING', 'MARKETING', 1, 2, 'Edgar Huertas', 'MK'),
-(3, '3', 'DISEÑO DE MODAS CON NIVEL EQUIVALENTE A TECNOLOGÍA SUPERIOR', 'DISEÑO DE MODAS CON NIVEL EQUIVALENTE A TECNOLOGÍA SUPERIOR', 1, 3, 'Mariagracia', 'DM'),
-(4, '4', 'TÉCNICO SUPERIOR EN GUIANZA TURÍSTICA', 'TÉCNICO SUPERIOR EN GUIANZA TURÍSTICA', 1, 4, 'Byron Quishpe', 'GT');
+INSERT INTO `Carrera` (`id`, `resolucion`, `nombre`, `descripcion`, `idModalidad`, `idInstituto`, `siglas`) VALUES
+(1, '1', 'TECNOLOGÍA SUPERIOR EN DESARROLLO DE SOFTWARE ', 'TECNOLOGÍA SUPERIOR EN DESARROLLO DE SOFTWARE ', 1, 1, 'DS'),
+(2, '2', 'MARKETING', 'MARKETING', 1, 2, 'MK'),
+(3, '3', 'DISEÑO DE MODAS CON NIVEL EQUIVALENTE A TECNOLOGÍA SUPERIOR', 'DISEÑO DE MODAS CON NIVEL EQUIVALENTE A TECNOLOGÍA SUPERIOR', 1, 3, 'DM'),
+(4, '4', 'TÉCNICO SUPERIOR EN GUIANZA TURÍSTICA', 'TÉCNICO SUPERIOR EN GUIANZA TURÍSTICA', 1, 4, 'GT');
 INSERT INTO `Estado` (`id`, `descripcion`) VALUES
 (1, 'ACTIVO'),
 (2, 'INACTIVO');
@@ -84,11 +53,11 @@ INSERT INTO `Genero` (`id`, `descripcion`) VALUES
 (1, 'MASCULINO'),
 (2, 'FEMENINO'),
 (3, 'OTROS');
-INSERT INTO `Instituto` (`id`, `descripcion`, `rector`, `vicerector`, `color`) VALUES
-(1, 'INSTITUTO TECNOLÓGICO SUPERIOR BENITO JUÁREZ', 'Magister, Iván Óscar Borja Carrera', 'Magister, Héctor Fabián Arevalo Mosquera', 'verde'),
-(2, 'INSTITUTO TECNOLÓGICO SUPERIOR 24 DE MAYO', 'Magister, Iván Óscar Borja Carrera', 'Magister, Héctor Fabián Arevalo Mosquera', 'rojo'),
-(3, 'INSTITUTO TECNOLÓGICO SUPERIOR GRAN COLOMBIA', 'Magister, Iván Óscar Borja Carrera', 'Magister, Héctor Fabián Arevalo Mosquera', 'amarillo'),
-(4, 'INSTITUTO TECNOLÓGICO SUPERIOR DE TURISMO Y PATRIMONIO YAVIRAC', 'Magister, Iván Óscar Borja Carrera', 'Magister, Héctor Fabián Arevalo Mosquera', 'azul');
+INSERT INTO `Instituto` (`id`, `descripcion`, `color`) VALUES
+(1, 'INSTITUTO TECNOLÓGICO SUPERIOR BENITO JUÁREZ',  'verde'),
+(2, 'INSTITUTO TECNOLÓGICO SUPERIOR 24 DE MAYO', 'rojo'),
+(3, 'INSTITUTO TECNOLÓGICO SUPERIOR GRAN COLOMBIA', 'amarillo'),
+(4, 'INSTITUTO TECNOLÓGICO SUPERIOR DE TURISMO Y PATRIMONIO YAVIRAC', 'azul');
 INSERT INTO `Jornada` (`id`, `descripcion`) VALUES
 (1, 'MATUTINA'),
 (2, 'VESPERTINA'),
@@ -115,8 +84,8 @@ INSERT INTO `NivelTitulo` (`id`, `descripcion`) VALUES
 (1, 'NINGUNO'),
 (2, 'BACHILLERATO'),
 (3, 'TÉCNICO'),
-(4, 'LICENCIATURA'),
-(5, 'INGENIERÍA'),
+(4, 'TECNOLÓGICO'),
+(5, 'TERCER NIVEL'),
 (6, 'MAESTRÍA'),
 (7, 'DOCTORADO');
 INSERT INTO `CarreraInstituto` (`idCarrera`, `idInstituto`) VALUES
@@ -138,8 +107,12 @@ INSERT INTO `Ocupacion` (`id`, `descripcion`) VALUES
 (11, 'DOCENTE'),
 (12, 'ESTUDIANTE');
 INSERT INTO `PeriodoAcademico` (`id`, `descripcion`) VALUES
-(1, 'MAYO-SEPTIEMBRE'),
-(2, 'NOVIEMBRE-MARZO');
+(1, 'Primero'),
+(2, 'Segundo'),
+(3, 'Tercero'),
+(4, 'Cuarto'),
+(5, 'Quinto'),
+(6, 'Sexto');
 INSERT INTO `PeriodoLectivo` (`id`, `descripcion`, `fechaInicio`, `fechaFin`, `matriculable`, `codigo`) VALUES
 (1, 'Mayo - Octubre 2017', '2017-05-01 00:00:00', '2017-10-31 00:00:00', 0, '2017-1'),
 (2, 'Noviembre 2017 - Abril 2018', '2017-11-01 00:00:00', '2018-04-30 00:00:00', 1, '2017-2');
@@ -151,13 +124,13 @@ INSERT INTO `Roles` (`id`, `descripcion`, `acceso`) VALUES
 (5, 'Secretaría Académica', 5),
 (6, 'Aspirante', 6),
 (7, 'Rector', 7),
-(8, 'Viserector', 8),
+(8, 'Vicerector', 8),
 (9, 'Coordinador de Carrera', 9);
 INSERT INTO `TipoAula` (`id`, `descripcion`) VALUES
 (1, 'AULA'),
 (2, 'LABORATORIO');
 INSERT INTO `TipoDiscapacidad` (`id`, `descripcion`) VALUES
-(1, 'ADITIVA'),
+(1, 'AUDITIVA'),
 (2, 'FÍSICA'),
 (3, 'INTELECTUAL'),
 (4, 'LENGUAJE'),
