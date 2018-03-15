@@ -334,3 +334,6 @@ insert into SilaboRecursoDidactico(idsilabo,idRecursoDidactico) values (5,2);
 Insert Into UnidadOrganizacion (nombre) values ('Formacion Tecnica Profecional');
 Insert Into UnidadOrganizacion (nombre) values ('Formacion Tecnica Dual');
 Insert Into UnidadOrganizacion (nombre) values ('Formacion Tecnica Presencial');
+
+insert into DetalleNotas (descripcion, nota, idCateogiraNota, idNota) values
+('Nota final',38.00,3,1),('Nota final',49.10,1,2),('Nota final',48.20,2,3),('Nota final',15.25,5,4),('Nota final',38.25,3,5)
