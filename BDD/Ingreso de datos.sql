@@ -263,10 +263,16 @@ insert into Discapacidad (idPersona, idTipoDiscapacidad, porcentaje) values
 (3,1,05.50);
 
 insert into Docente (idPersona, fechaInicio, idEstado) values 
-(1,"2017-08-12",1),
+(1,"2014-08-12",1),
 (2,"2017-01-12",1),
-(3,"2017-10-02",1),
-(4,"2018-01-22",1);
+(3,"2015-10-02",1),
+(4,"2018-03-28",1),
+(5,"2015-08-31",1),
+(6,"2014-05-15",1),
+(7,"2016-09-09",1),
+(8,"2017-11-08",1),
+(9,"2014-06-05",1),
+(10,"2015-02-20",1);
 
 insert into Documento (documento, descripcion) values 
 ('A001', 'Solicitud'), 
@@ -383,3 +389,172 @@ Insert Into UnidadOrganizacion (nombre) values
 ('Formacion Tecnica Profecional'),
 ('Formacion Tecnica Dual'),
 ('Formacion Tecnica Presencial');
+
+insert into Cargo (detalle) values
+('Administrativo'),
+('Docencia'),
+('Aseo'),
+('Seguridad'),
+('Recursos Humanos'),
+('Psicologia');
+
+insert into CargoInstituto (idCarrera, idPersona, idCargo, fechaInicio, fechaFin, estado) values
+(1,1,6, '2017-05-12', '2017-09-03', true),
+(1,2,6, '2016-05-16', '2017-01-13', true),
+(1,3,6, '2015-05-16', '2015-07-11', true),
+(1,4,6, '2017-05-15', '2017-06-05', true),
+(1,5,6, '2018-01-14', '2018-03-15', true),
+(1,6,6, '2017-01-11', '2017-04-09', true),
+(1,7,6, '2016-05-12', '2017-10-03', true),
+(1,8,6, '2018-02-12', '2019-02-20', true),
+(1,9,6, '2015-05-12', '2017-09-03', true),
+(1,10,6, '2017-05-12', '2017-09-03', true);
+
+insert into DatosEstudiante (idEstudiante, descripcion, dato) values
+(1,'Estudiante Benito Juarez', '1725615593'),
+(2,'Estudiante 24 de Mayo', '1725615593'),
+(3,'Estudiante Benito Juarez', '1225615593'),
+(4,'Estudiante Benito Juarez', '17251215593'),
+(5,'Estudiante Gran Colombia', '1625615593'),
+(6,'Estudiante Benito Juarez', '17253425593'),
+(7,'Estudiante 24 de Mayo', '1225315593'),
+(8,'Estudiante Benito Juarez', '1223615593'),
+(9,'Estudiante Benito Juarez', '1725615593'),
+(10,'Estudiante Gran Colombia', '1525615593');
+
+insert into EjeTransversal (detalle) values
+('Recoleción de información'),
+('Base de datos'),
+('Capacitación'),
+('Nivelación'),
+('Administración');
+
+insert into Hobbies (idPersona, descripcion) values
+(1,'pintura'),
+(2,'caminar'),
+(3,'futboll'),
+(4,'patinaje'),
+(5,'pasear'),
+(6,'video juegos'),
+(7,'ver televición'),
+(8,'arte'),
+(9,'tecnologia'),
+(10,'idiomas');
+
+insert into Institucion (nombre, idUbicacion, tipo) values
+(1,1,'Privada'),
+(2,2,'Publica'),
+(3,3,'Privada'),
+(4,4,'Publica'),
+(5,5,'Privada'),
+(6,6,'Privada'),
+(7,7,'Publica'),
+(8,8,'Publica'),
+(9,9,'Privada'),
+(10,10,'Publica');
+
+insert into PlanSemana (semana, idPeriodoLectivo, idAsignatura, estado, codigo, objetivo) values
+(1,1,1,true,'DS_MD_1','Introducción'),
+(2,1,1,true,'DS_MD_1','Desarrollo'),
+(3,1,1,true,'DS_MD_1','Realización de preguntas'),
+(4,1,1,true,'DS_MD_1','Practica'),
+(5,1,1,true,'DS_MD_1','Finalización');
+
+insert into PlanSemanaActividades (detalle, idPlanSemana) values
+('Introducción',1),
+('Desarrollo',2),
+('Realización de preguntas',3),
+('Practica',4),
+('Finalización',5);
+
+insert into PlanSemanaAplicacion (idSilaboResultados, idPlanSemana) values
+(1,1),
+(2,2),
+(3,3),
+(4,4),
+(5,5);
+
+insert into PlanSemanaDesarrolloClase (detalle, tiempo, idPlanSemana) values 
+('Recordar temas ya vistos',2,1),
+('Desarrollar los temas',2,2),
+('Responder preguntas planteadas',2,3),
+('Aplicación de conocimientos',2,4),
+('Finalizacion de los temas',2,5);
+
+insert into PlanSemanaEjeTransversal (detalle, idPlanSemana) values
+('Teoria de conjuntos',1),
+('Ecuaciones de segundo grado',2),
+('Programación basica',3),
+('JavaScript',4),
+('Html-MySQL',5);
+
+insert into PlanSemanaMetodologia (idSilaboMetodologia, idPlanSemana) values
+(1,1),
+(3,2),
+(2,3),
+(3,4),
+(1,5);
+
+insert into PlanSemanaObjetivo (objetivo1, objetivo2, objetivo3, objetivo4, idPlanSemana) values
+('Impartir conocimiento','Desarrollar abilidades','Generar curiosidad','Aclarar dudas',1),
+('Impartir conocimiento','Desarrollar abilidades','Generar curiosidad','Aclarar dudas',2),
+('Impartir conocimiento','Desarrollar abilidades','Generar curiosidad','Aclarar dudas',3),
+('Impartir conocimiento','Desarrollar abilidades','Generar curiosidad','Aclarar dudas',4),
+('Impartir conocimiento','Desarrollar abilidades','Generar curiosidad','Aclarar dudas',5);
+
+insert into PlanSemanaPrerrequisitos (detalle, idPlanSemana) values
+('Matematica basica',1),
+('Algebra',2),
+('Informatica basica',3),
+('Programación basica',4),
+('Lenguaje de programación',5);
+
+insert into PlanSemanaRecursoDidactico (idSilaboRecursoDidactico, idPlanSemana) values
+(5,1),
+(1,2),
+(4,3),
+(2,4),
+(3,5);
+
+insert into PlanSemanaSubTema (detalle, idPlanSemana) values
+('Uniones e interserciones',1),
+('Problemas matematicos',2),
+('For,unshift,shift',3),
+('Swich, while, recursividad',4),
+('Formato HTML5',5);
+
+insert into PlanSemanaTecnicaEvaluacion (idTecnicasEvaluacion, idPlanSemana) values
+(2,1),
+(5,2),
+(2,3),
+(3,4),
+(1,5);
+
+insert into PlanSemanaTema (detalle, idPlanSemana) values
+('Conjuntos',1),
+('Ecuaciones',2),
+('Programación',3),
+('Lenguaje de programación',4),
+('MySQL',5);
+
+insert into RecursosDidacticos (tipoMaterial, material) values
+('Dicactico','libros, carteles, etc.'),
+('Tecnologico','infocus, computadoes, etc.'),
+('Entretenimiento','Celulares, actividades grupales, etc');
+
+insert into RelacionPerfilResultado (idSilaboResultados, idPerfilEgreso, contribucion) values
+(1,1,'Donaciones'),
+(3,2,'Colaboraciones'),
+(1,3,'Donaciones'),
+(2,4,'Colaboraciones'),
+(1,5,'Donaciones');
+
+insert Into TecnicaEvaluacion(id,detalle) values
+(1,'Trabajos en clase'),
+(2,'Lecciones Escritas'),
+(3,'Leccion oral'),
+(4,'Trabajos en grupo'),
+(5,'Horas Autonomas');
+
+insert into VerboBloom (detalle,idPadre) values
+('observar', 1);
