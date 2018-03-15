@@ -1,0 +1,11 @@
+SELECT * FROM ignug.CategoriaNota;
+Insert Into CategoriaNota (id, descripcion) values (1, null);
+Insert Into CategoriaNota (id, descripcion) values (2, null);
+Insert Into CategoriaNota (id, descripcion) values (3, null);
+Insert Into CategoriaNota (id, descripcion) values (4, null);
+Insert Into CategoriaNota (id, descripcion) values (5, null);
+Insert Into CategoriaNota (id, descripcion) values (6, null);
+Insert Into CategoriaNota (id, descripcion) values (7, null);
+Insert Into CategoriaNota (id, descripcion) values (8, null);
+Insert Into CategoriaNota (id, descripcion) values (9, null);
+Insert Into CategoriaNota (id, descripcion) values (10, null);
