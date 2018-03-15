@@ -807,7 +807,7 @@ CREATE TABLE CargoInstituto (
     PRIMARY KEY(id)
 );
 
-CREATE TABLE CargoInstituto (
+CREATE TABLE Cargo (
     id INT AUTO_INCREMENT NOT NULL,
     detalle VARCHAR(100) NOT NULL,
     PRIMARY KEY(id)
