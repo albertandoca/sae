@@ -53,12 +53,20 @@ INSERT INTO `Genero` (`id`, `descripcion`) VALUES
 (1, 'MASCULINO'),
 (2, 'FEMENINO'),
 (3, 'OTROS');
+<<<<<<< HEAD
 INSERT INTO `Instituto` (`id`, `descripcion`, `ruc`, `direccion`, `telefono1`, `telefono2`,`resolución`, `color`) VALUES
 (1, 'INSTITUTO TECNOLÓGICO SUPERIOR BENITO JUÁREZ','1722854716001','Garcia Moreno y Amabato','0998569103','0988226301', 'Matriculado', 'verde'),
 (2, 'INSTITUTO TECNOLÓGICO SUPERIOR 24 DE MAYO', '1722854716001','Garcia Moreno y Amabato','0998569103','0988226301', 'Matriculado', 'rojo'),
 (3, 'INSTITUTO TECNOLÓGICO SUPERIOR GRAN COLOMBIA', '1722854716001','Garcia Moreno y Amabato','0998569103','0988226301', 'Matriculado', 'amarillo'),
 (4, 'INSTITUTO TECNOLÓGICO SUPERIOR DE TURISMO Y PATRIMONIO YAVIRAC', '1722854716001','Garcia Moreno y Amabato','0998569103','0988226301', 'Matriculado', 'azul');
 
+=======
+INSERT INTO Instituto (id, descripcion, ruc, direccion, telefono1, telefono2, resolución, color) VALUES
+(1, 'INSTITUTO TECNOLÓGICO SUPERIOR BENITO JUÁREZ','000124415442','Garcia Moreno y Ambato','022486369','024785365','Primera', 'verde'),
+(2, 'INSTITUTO TECNOLÓGICO SUPERIOR 24 DE MAYO','0001645415442','Garcia Moreno y Ambato','022486369','024785365','Segunda', 'rojo'),
+(3, 'INSTITUTO TECNOLÓGICO SUPERIOR GRAN COLOMBIA','012124415442','Garcia Moreno y Ambato','022486369','024785365','Tercera', 'amarillo'),
+(4, 'INSTITUTO TECNOLÓGICO SUPERIOR DE TURISMO Y PATRIMONIO YAVIRAC','000123415442','Garcia Moreno y Ambato','022486369','024785365','Cuarta', 'azul');
+>>>>>>> bc638677e9a964043bba9e3e02f3728fd6e485f7
 INSERT INTO `Jornada` (`id`, `descripcion`) VALUES
 (1, 'MATUTINA'),
 (2, 'VESPERTINA'),

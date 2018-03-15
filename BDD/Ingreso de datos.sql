@@ -1,63 +1,16 @@
 USE ignug;
-INSERT INTO Asignatura ( idMalla, codigo, nombre, nivel, horasPractica, horasDocente, horasAutonomas, idUnidadOrganizacion, idCampoFormacion) VALUES
-(2,'DS_MD_1','Matemática discreta','1','0','48','27','1','1'),
-(2,'DS_IDS_1','Introducción al desarrollo de software','1','12','60','27','2','2'),
-(2,'DS_DP_1','Desarrolo del pensamiento','1','0','36','36','3','3'),
-(2,'DS_FP_1','Fundamentos de programación','1','24','72','32','3','3'),
-(2,'DS_ADS_1','Análisis y diseño de sistemas','1','0','60','32','4','4'),
-(2,'DS_IA1_1','Ingles A1','1','0','48','36','5','5'),
-(2,'DS_AT_2','Álgebra y trigonometría','2','0','48','27','6','6'),
-(2,'DS_BD_2','Base de datos','2','24','60','25','7','7'),
-(2,'DS_POO_2','Programación orientada a objetos','2','24','72','32','8','8'),
-(2,'DS_MDS_2','Metodologías de desrrollo de software','2','12','60','20','9','9'),
-(2,'DS_LC_2','Lenguaje y comunicación','2','0','36','25','10','10'),
-(2,'DS_IA2_2','Ingles A2','2','0','48','27','11','11'),
-(2,'DS_CDI_3','Cálculo diferencial e integral','3','0','48','32','12','12'),
-(2,'DS_BDA_3','Base de datos avanzada','3','24','48','32','13','13'),
-(2,'DS_FA_3','Fundamentos de administración','3','0','24','25','14','14'),
-(2,'DS_PV_3','Programación visual','3','36','60','20','15','15'),
-(2,'DS_DI_3','Diseño de interfaz','3','36','60','20','16','16'),
-(2,'DS_IB1_3','Ingles B1.1','3','0','48','27','17','17'),
-(2,'DS_ED_4','Estadística descriptiva','4','0','48','26','18','18'),
-(2,'DS_LJ_4','Legislación informatica','4','0','48','26','19','19'),
-(2,'DS_PAW_4','Programación de aplicaciones web','4', '24','60','38','20','20'),
-(2,'DS_DAM_4','Desarrollo de apliaciones moviles','4','24','72','37','21','21'),
-(2,'DS_IB2_4','Ingles B1.2','4','0','48','27','22','22'),
-(2,'DS_DC_4','Diversidad y cultura','4','0','36','26','23','23'),
-(2,'DS_CS_5','Calidad del software','5','24','60','6','24','24'),
-(2,'DS_E_5','Emprendimiento','5','0','36','5','25','25'),
-(2,'DS_PT_5','Proyecto de titulación','5', NULL, NULL, NULL,'26','26'),
-(2,'DS_TAP_5','Tendencias actuales de programación','5','24','60','6','27','27'),
-(2,'DS_FRC_5','Fundamentos de redes y conectividaad','5','12','60','6','28','28'),
-(2,'DS_EP_5','Ética profesional','5','0','36','5','29','29');
+insert into EstadoPersona (idPersona, datosCompletos, encuestaFactoresAsociados) values
+(1,true,true),
+(2,true,true),
+(3,true,true),
+(4,true,true),
+(5,true,true),
+(6,true,true),
+(7,true,true),
+(8,true,true),
+(9,true,true),
+(10,true,true);
 
-SELECT * FROM ignug.Asistencia;
-insert into Asistencia (idMatriculaAsignatura, fecha, horas) values 
-(1 ,"2018-03-14", 10),
-(2 ,"2018-03-14", 10),
-(3 ,"2018-03-14", 10),
-(4 ,"2018-03-14", 10),
-(5 ,"2018-03-14", 10),
-(6 ,"2018-03-14", 10),
-(7 ,"2018-03-14", 10),
-(8 ,"2018-03-14", 10),
-(9 ,"2018-03-14", 10),
-(10 ,"2018-03-14",10);
-
-SELECT * FROM ignug.Aula;
-insert into Aula (capacidad,descripcion,idTipoAula) values 
-(50,'Cuenca',1),
-(35,'Catamarca',1),
-(40,'Cueva de las Manos',1),
-(38,'Xian',2),
-(25,'Yasuni',1),
-(27,'Maracaibo',1),
-(23,'Touluse',2),
-(20,'Gori',2),
-(25,'Montecristi',1), 
-(25,'Galapagos',1);
-
-SELECT * FROM ignug.ExperienciaLaboral;
 insert into ExperienciaLaboral (idPersona, fechaInicio, fechaFin, descripcionCargo, nombreEmpresa, idMotivoSalida) values
 (1, '2004-05-23', '2006-01-12', 'Recursos Humanos', 'Yavirac',1),
 (2, '2005-03-22', '2007-02-24', 'Bodega', 'Yavirac',2),
@@ -124,6 +77,18 @@ insert into SilaboUnidades (idSilabo, descripcion, codigo) values
 insert into SilaboElementos(idSilaboUnidades, IdVerboBloom, objeto ,condicion, finalidad, codigo) values
 (1, 1, 1,'programacion', 'Tener conciomientos basicos', '101'),
 (7, 1, 1, 'Técnicas(herencia, abstracción, acoplamiento)','Obtener buenos pprogramadores', '201');
+
+insert into Aula (capacidad,descripcion,idTipoAula) values 
+(50,'Cuenca',1),
+(35,'Catamarca',1),
+(40,'Cueva de las Manos',1),
+(38,'Xian',2),
+(25,'Yasuni',1),
+(27,'Maracaibo',1),
+(23,'Touluse',2),
+(20,'Gori',2),
+(25,'Montecristi',1), 
+(25,'Galapagos',1);
 
 insert into Paralelo (descripcion) values 
 ('A'),
@@ -414,3 +379,7 @@ insert into SilaboRecursoDidactico(idsilabo,idRecursoDidactico) values
 (4,5),
 (5,2);
 
+Insert Into UnidadOrganizacion (nombre) values 
+('Formacion Tecnica Profecional'),
+('Formacion Tecnica Dual'),
+('Formacion Tecnica Presencial');
