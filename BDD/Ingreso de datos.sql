@@ -88,6 +88,12 @@ insert into SilaboElementos(idSilaboUnidades, verbo, objeto ,condicion, finalida
 insert into Aula (capacidad,descripcion,idTipoAula) values (50,'Cuenca',1),(35,'Catamarca',1),(40,'Cueva de las Manos',1),
 (38,'Xian',2), (25,'Yasuni',1), (27,'Maracaibo',1), (23,'Touluse',2),(20,'Gori',2),(25,'Montecristi',1), (25,'Galapagos',1);
 
+insert into Paralelo (descripcion) values 
+('A'),
+('B'),
+('C'),
+('D');
+
 insert into AulasAsignaturas (idAula, idDocenteAsignatura) values (1,2),(2,3),(1,1),(1,5),(2,1),(2,6),(1,8),(2,2),(1,3),(2,1);
 
 insert into CategoriaNota (descripcion) values ('47-50 Excelente'), ('41-46 Muy Bueno'), ('35-40 Bueno'), ('29-34 Regular'), ('0-28 Deficiente');
@@ -165,3 +171,166 @@ Insert Into Contacto (id, idpersona, descripcion, contacto ) values(7,7,Null,'09
 Insert Into Contacto (id, idpersona, descripcion, contacto ) values(8,8,Null,'0998569109');
 Insert Into Contacto (id, idpersona, descripcion, contacto ) values(9,9,Null,'0998569110');
 Insert Into Contacto (id, idpersona, descripcion, contacto ) values(10,10,Null,'0998569102');
+
+insert into LogMailSender (fecha, FromEmail, FromAlias, ReplyEmail, ToEmail, ToAlias, Asunto, Mensaje, EstadoEnvio) values
+('2009-03-14','yavirac1@yavirac.edu.ec','yavirac', 'yavirac@yavirac.edu.ec', 'educacion@ministerio.edu.ec', 'Ministerio de educacion', NULL, 'texto', 'enviado'),
+('2010-03-14','yavirac2@yavirac.edu.ec','yavirac', 'yavirac@yavirac.edu.ec', 'educacion@ministerio.edu.ec', 'Ministerio de educacion', NULL, 'texto', 'enviado'),
+('2011-03-14','yavirac3@yavirac.edu.ec','yavirac', 'yavirac@yavirac.edu.ec', 'educacion@ministerio.edu.ec', 'Ministerio de educacion', NULL, 'texto', 'enviado'),
+('2012-03-14','yavirac4@yavirac.edu.ec','yavirac', 'yavirac@yavirac.edu.ec', 'educacion@ministerio.edu.ec', 'Ministerio de educacion', NULL, 'texto', 'enviado'),
+('2013-03-14','yavirac5@yavirac.edu.ec','yavirac', 'yavirac@yavirac.edu.ec', 'educacion@ministerio.edu.ec', 'Ministerio de educacion', NULL, 'texto', 'enviado'),
+('2014-03-14','yavirac6@yavirac.edu.ec','yavirac', 'yavirac@yavirac.edu.ec', 'educacion@ministerio.edu.ec', 'Ministerio de educacion', NULL, 'texto', 'enviado'),
+('2015-03-14','yavirac7@yavirac.edu.ec','yavirac', 'yavirac@yavirac.edu.ec', 'educacion@ministerio.edu.ec', 'Ministerio de educacion', NULL, 'texto', 'enviado'),
+('2016-03-14','yavirac8@yavirac.edu.ec','yavirac', 'yavirac@yavirac.edu.ec', 'educacion@ministerio.edu.ec', 'Ministerio de educacion', NULL, 'texto', 'enviado'),
+('2017-03-14','yavirac9@yavirac.edu.ec','yavirac', 'yavirac@yavirac.edu.ec', 'educacion@ministerio.edu.ec', 'Ministerio de educacion', NULL, 'texto', 'enviado'),
+('2018-03-14','yavirac10@yavirac.edu.ec','yavirac', 'yavirac@yavirac.edu.ec', 'educacion@ministerio.edu.ec', 'Ministerio de educacion', NULL, 'texto', 'enviado');
+
+insert into Parcial (descripcion) values 
+('primer parcial'),
+('segundo parcial');
+
+insert into Ponderacion (idCategoria, idParcial, porcentaje) values 
+(1, 1 , '100'),
+(2, 2 , '100'),
+(3, 1 , '100'),
+(4, 2 , '100'),
+(5, 1 , '100'),
+(6, 2 , '100'),
+(7, 1 , '100'),
+(8, 2 , '100'),
+(9, 1 , '100'),
+(10, 2 , '100');
+
+insert into RolSecundario (idPersona, idRol) values 
+(1,2),
+(2,1),
+(3,5),
+(4,7),
+(5,9),
+(6,8),
+(7,2),
+(8,4),
+(9,7),
+(10,3);
+
+insert into Titulo (idPersona, idInstitucion, codigoRegistro, idNivelTitulo) values
+(1,1,'2dfg4',3),
+(2,1,'356fd',3),
+(3,1,'4fd58',3),
+(4,1,'68hfh',3),
+(5,1,'5778b',3),
+(6,1,'6hr6g',3),
+(7,1,'57gcs',3),
+(8,1,'77ghg',3),
+(9,1,'yuhv5',3),
+(10,1,'5467hg',3);
+
+insert into ContenidosUnidad (idSilaboUnidades, codigo) values (1, 'A1'),(2, 'B2'),(3, 'C3'),(2, 'D4'),(5, 'E5');
+insert into Discapacidad (idPersona, idTipoDiscapacidad, porcentaje) values (1,2,25.00),(2,3,15.00),(3,1,05.50);
+insert into Docente (idPersona, fechaInicio, idEstado) values (11,"2017-08-12",1),(11,"2017-01-12",1),(11,"2017-10-02",1),(11,"2018-01-22",1);
+insert into Documento (documento, descripcion) values ('A001', 'Solicitud'), ('B001', 'Formulario'), ('C001', 'Atencion'), ('D001', 'Permiso');
+insert into EducacionContinua (descripcion, horas, fechaInicio, fechaFin, idTipoEducacionContinua, lugar) values
+('Ingles A', 40, "2017-11-11","2017-12-11",2,'ESPE'),('Ingles A1', 40, "2017-12-13","2018-01-13",2,'ESPE'),('Base de Datos', 40, "2018-01-11","2018-02-11",2,'Yavirac'),('Ingles B', 40, "2018-05-11","2018-06-11",1,'YAVIRAC');
+insert into Enfermedad (descripcion, observaciones, tratamiento) values ('Gripe','Dolor Corporal','Paracetamol'),('Alergia','Alergia al Polvo','Alergin'),('Tos','Tos Seca','Jarabe');
+
+insert into Requisito(idAsignaturaDependiente,idAsignaturaIndependiente,idTipoRequisito) 
+values( 1,1,1);
+insert into Requisito(idAsignaturaDependiente,idAsignaturaIndependiente,idTipoRequisito) 
+values( 1,2,1);
+insert into Requisito(idAsignaturaDependiente,idAsignaturaIndependiente,idTipoRequisito) 
+values( 1,3,1);
+insert into Requisito(idAsignaturaDependiente,idAsignaturaIndependiente,idTipoRequisito) 
+values( 1,4,1);
+insert into Requisito(idAsignaturaDependiente,idAsignaturaIndependiente,idTipoRequisito) 
+values( 1,5,1);
+
+insert into SilaboBiliografia (detalle, tipo) values ('Cabezas,L. (2012). PHP 6 Segunda edición. Madrid: Anaya Multimedia', 'Completa' );
+insert into SilaboBiliografia (detalle, tipo) values ('Cabezas,L. González, F. (2015). Desarrollo Web con PHP y MySQL. Madrid: Anaya Multimedia .', 'Básica' );
+insert into SilaboBiliografia (detalle, tipo) values ('Oracle. (2017). MYSQL Tutorial. EEUU: Oracle.', 'Básica' );
+
+Insert Into PerfilEgreso (idmalla,detalle) Values (1,'Aprobado');
+Insert Into PerfilEgreso (idmalla,detalle) Values (1,'Aprobado');
+Insert Into PerfilEgreso (idmalla,detalle) Values (2,'Aprobado');
+Insert Into PerfilEgreso (idmalla,detalle) Values (3,'Aprobado');
+Insert Into PerfilEgreso (idmalla,detalle) Values (4,'Aprobado');
+Insert Into PerfilEgreso (idmalla,detalle) Values (5,'Aprobado');
+Insert Into PerfilEgreso (idmalla,detalle) Values (6,'Aprobado');
+
+Insert Into MetodologiaRecursos (tipoMaterial,material) Values ('Electronico', 'celular, tablets, camara');
+Insert Into MetodologiaRecursos (tipoMaterial,material) Values ('Didactico', 'pintura,papel,tijeras');
+Insert Into MetodologiaRecursos (tipoMaterial,material) Values ('Reciclado', 'botellas,CDs');
+Insert Into MetodologiaRecursos (tipoMaterial,material) Values ('Visual', 'celular,enfocus, libros, tripticos');
+Insert Into MetodologiaRecursos (tipoMaterial,material) Values ('Auditivo', 'Musica, audiolibros,');
+
+insert into ContenidosDocente (idContenidoElementos, idSilaboResultados, horasClase) values (1,1,8);
+insert into ContenidosDocente (idContenidoElementos, idSilaboResultados, horasClase) values (2,2,8);
+insert into ContenidosDocente (idContenidoElementos, idSilaboResultados, horasClase) values (3,3,8);
+insert into ContenidosDocente (idContenidoElementos, idSilaboResultados, horasClase) values (4,2,8);
+insert into ContenidosDocente (idContenidoElementos, idSilaboResultados, horasClase) values (5,1,8);
+insert into ContenidosDocente (idContenidoElementos, idSilaboResultados, horasClase) values (6,2,8);
+insert into ContenidosDocente (idContenidoElementos, idSilaboResultados, horasClase) values (7,3,8);
+insert into ContenidosDocente (idContenidoElementos, idSilaboResultados, horasClase) values (8,1,8);
+insert into ContenidosDocente (idContenidoElementos, idSilaboResultados, horasClase) values (9,2,8);
+insert into ContenidosDocente (idContenidoElementos, idSilaboResultados, horasClase) values (10,1,8);
+
+insert into SilaboMetodologia (idSilabo, idMetodologia) values (1,1);
+insert into SilaboMetodologia (idSilabo, idMetodologia) values (2,1);
+insert into SilaboMetodologia (idSilabo, idMetodologia) values (3,1);
+
+Insert Into Notas (idparcial, idMatriculaAsignatura) Values (35,1);
+Insert Into Notas (idparcial, idMatriculaAsignatura) Values (22,1);
+Insert Into Notas (idparcial, idMatriculaAsignatura) Values (20,2);
+Insert Into Notas (idparcial, idMatriculaAsignatura) Values (25,3);
+Insert Into Notas (idparcial, idMatriculaAsignatura) Values (18,1);
+Insert Into Notas (idparcial, idMatriculaAsignatura) Values (17,2);
+
+insert into Metodologia(id, estrategia,finalidad) Values( 1,'Curso Angular','Tene bases para desarollar programas');
+insert into Metodologia(id, estrategia,finalidad) Values( 2,'Null','Null');
+insert into Metodologia(id, estrategia,finalidad) Values( 3,'Null','Null');
+insert into Metodologia(id, estrategia,finalidad) Values( 4,'Null','Null');
+insert into Metodologia(id, estrategia,finalidad) Values( 5,'Null','Null');
+
+Insert Into ContenidosElementos (id, idContenidoUnidad, semana, idSilaboElementos,observaciones ) Values(1,1,1,1, 'Regular');
+Insert Into ContenidosElementos (id, idContenidoUnidad, semana, idSilaboElementos,observaciones ) Values(2,2,2,2, 'Completar tema 2');
+Insert Into ContenidosElementos (id, idContenidoUnidad, semana, idSilaboElementos,observaciones ) Values(3,3,3,3, 'Tema a tratar');
+Insert Into ContenidosElementos (id, idContenidoUnidad, semana, idSilaboElementos,observaciones ) Values(4,4,4,4, 'Sin novedad');
+Insert Into ContenidosElementos (id, idContenidoUnidad, semana, idSilaboElementos,observaciones ) Values(5,5,5,5, 'Temas a trabajar');
+Insert Into ContenidosElementos (id, idContenidoUnidad, semana, idSilaboElementos,observaciones ) Values(6,6,6,6, 'No se cumple con el Contenido');
+Insert Into ContenidosElementos (id, idContenidoUnidad, semana, idSilaboElementos,observaciones ) Values(7,7,7,7, 'Regular');
+Insert Into ContenidosElementos (id, idContenidoUnidad, semana, idSilaboElementos,observaciones ) Values(8,8,8,8, 'Pendiente');
+Insert Into ContenidosElementos (id, idContenidoUnidad, semana, idSilaboElementos,observaciones ) Values(9,9,9,9, 'Regular');
+Insert Into ContenidosElementos (id, idContenidoUnidad, semana, idSilaboElementos,observaciones ) Values(10,10,10,10, 'Completar el Contenido');
+
+Insert Into ContenidosActividades ( id, idContenidoElementos, idSilaboEvidenciasRa, tipo, horasClase) Values (1,1,1,'Null',10);
+Insert Into ContenidosActividades ( id, idContenidoElementos, idSilaboEvidenciasRa, tipo, horasClase) Values (2,2,2,'Null',11);
+Insert Into ContenidosActividades ( id, idContenidoElementos, idSilaboEvidenciasRa, tipo, horasClase) Values (3,3,3,'Null',12);
+Insert Into ContenidosActividades ( id, idContenidoElementos, idSilaboEvidenciasRa, tipo, horasClase) Values (4,4,4,'Null',13);
+Insert Into ContenidosActividades ( id, idContenidoElementos, idSilaboEvidenciasRa, tipo, horasClase) Values (5,5,5,'Null',14);
+Insert Into ContenidosActividades ( id, idContenidoElementos, idSilaboEvidenciasRa, tipo, horasClase) Values (6,6,6,'Null',15);
+Insert Into ContenidosActividades ( id, idContenidoElementos, idSilaboEvidenciasRa, tipo, horasClase) Values (7,7,7,'Null',16);
+Insert Into ContenidosActividades ( id, idContenidoElementos, idSilaboEvidenciasRa, tipo, horasClase) Values (8,8,8,'Null',17);
+Insert Into ContenidosActividades ( id, idContenidoElementos, idSilaboEvidenciasRa, tipo, horasClase) Values (9,9,9,'Null',18);
+Insert Into ContenidosActividades ( id, idContenidoElementos, idSilaboEvidenciasRa, tipo, horasClase) Values (10,10,10,'Null',19);
+
+insert into SilaboResultados (idSilaboElementos, verbo, objeto ,condicion, finalidad, codigo) values
+(1, 'Aplicar', 'los conocimientos de conjuntos', 'siguiendo los parametros necesarios', 'probando que los conocimientos adquiridos fueron optimos', '1.1.1');
+insert into SilaboResultados (idSilaboElementos, verbo, objeto ,condicion, finalidad, codigo) values
+(2, 'construir', 'mediante los conocimientos ', 'sobre programacion orientada a objetos', 'una pagina web estatica', '1.1.1');
+insert into SilaboResultados (idSilaboElementos, verbo, objeto ,condicion, finalidad, codigo) values
+(3, 'Modificar', 'un codigo con errores', 'obteniendo un codigo funcional', 'aplicando lo aprendido', '1.1.1');
+
+insert into SilaboEvidenciasRa (idSilaboResultados, descripcion, codigo) values
+(1, 'Presentacion de una pagina web estatica', 1);
+insert into SilaboEvidenciasRa (idSilaboResultados, descripcion, codigo) values
+(2, 'Presentacion de una pagina web estatica', 1);
+insert into SilaboEvidenciasRa (idSilaboResultados, descripcion, codigo) values
+(3, 'Presentacion de una pagina web estatica', 1);
+
+insert into SilaboRecursoDidactico(idsilabo,idRecursoDidactico) values (1,1);
+insert into SilaboRecursoDidactico(idsilabo,idRecursoDidactico) values (2,3);
+insert into SilaboRecursoDidactico(idsilabo,idRecursoDidactico) values (3,2);
+insert into SilaboRecursoDidactico(idsilabo,idRecursoDidactico) values (4,5);
+insert into SilaboRecursoDidactico(idsilabo,idRecursoDidactico) values (5,2);
+
+Insert Into UnidadOrganizacion (nombre) values ('Formacion Tecnica Profecional');
+Insert Into UnidadOrganizacion (nombre) values ('Formacion Tecnica Dual');
+Insert Into UnidadOrganizacion (nombre) values ('Formacion Tecnica Presencial');
