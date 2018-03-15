@@ -53,16 +53,18 @@ INSERT INTO `Genero` (`id`, `descripcion`) VALUES
 (1, 'MASCULINO'),
 (2, 'FEMENINO'),
 (3, 'OTROS');
-INSERT INTO `Instituto` (`id`, `descripcion`, `color`) VALUES
-(1, 'INSTITUTO TECNOLÓGICO SUPERIOR BENITO JUÁREZ',  'verde'),
-(2, 'INSTITUTO TECNOLÓGICO SUPERIOR 24 DE MAYO', 'rojo'),
-(3, 'INSTITUTO TECNOLÓGICO SUPERIOR GRAN COLOMBIA', 'amarillo'),
-(4, 'INSTITUTO TECNOLÓGICO SUPERIOR DE TURISMO Y PATRIMONIO YAVIRAC', 'azul');
+INSERT INTO `Instituto` (`id`, `descripcion`, `ruc`, `direccion`, `telefono1`, `telefono2`,`resolución`, `color`) VALUES
+(1, 'INSTITUTO TECNOLÓGICO SUPERIOR BENITO JUÁREZ','1722854716001','Garcia Moreno y Amabato','0998569103','0988226301', 'Matriculado', 'verde'),
+(2, 'INSTITUTO TECNOLÓGICO SUPERIOR 24 DE MAYO', '1722854716001','Garcia Moreno y Amabato','0998569103','0988226301', 'Matriculado', 'rojo'),
+(3, 'INSTITUTO TECNOLÓGICO SUPERIOR GRAN COLOMBIA', '1722854716001','Garcia Moreno y Amabato','0998569103','0988226301', 'Matriculado', 'amarillo'),
+(4, 'INSTITUTO TECNOLÓGICO SUPERIOR DE TURISMO Y PATRIMONIO YAVIRAC', '1722854716001','Garcia Moreno y Amabato','0998569103','0988226301', 'Matriculado', 'azul');
+
 INSERT INTO `Jornada` (`id`, `descripcion`) VALUES
 (1, 'MATUTINA'),
 (2, 'VESPERTINA'),
 (3, 'NOCTURNA'),
 (4, 'INTENSIVA');
+
 INSERT INTO `JornadaCarrera` (`id`, `idJornada`, `idCarrera`) VALUES
 (1, 2, 1),
 (2, 2, 2),
@@ -70,16 +72,19 @@ INSERT INTO `JornadaCarrera` (`id`, `idJornada`, `idCarrera`) VALUES
 (4, 2, 3),
 (5, 3, 3),
 (6, 4, 4);
+
 INSERT INTO `Modalidad` (`id`, `descripcion`) VALUES
 (1, 'PRESENCIAL'),
 (2, 'DUAL'),
 (3, 'SEMIPRESENCIAL'),
 (4, 'DISTANCIA'),
 (5, 'VIRTUAL');
+
 INSERT INTO `MotivoSalida` (`id`, `descripcion`) VALUES
 (1, 'RENUNCIA VOLUNTARIA'),
 (2, 'DESPIDO'),
 (3, 'FIN DE CONTRATO');
+
 INSERT INTO `NivelTitulo` (`id`, `descripcion`) VALUES
 (1, 'NINGUNO'),
 (2, 'BACHILLERATO'),
@@ -88,11 +93,13 @@ INSERT INTO `NivelTitulo` (`id`, `descripcion`) VALUES
 (5, 'TERCER NIVEL'),
 (6, 'MAESTRÍA'),
 (7, 'DOCTORADO');
+
 INSERT INTO `CarreraInstituto` (`idCarrera`, `idInstituto`) VALUES
 (1, 1),
 (2, 2),
 (3, 3),
 (4, 4);
+
 INSERT INTO `Ocupacion` (`id`, `descripcion`) VALUES
 (1, 'DIRECTORES Y GERENTES'),
 (2, 'PROFESIONALES CIENTÍFICOS E INTELECTUALES'),
@@ -106,6 +113,7 @@ INSERT INTO `Ocupacion` (`id`, `descripcion`) VALUES
 (10, 'OCUPACIONES MILITARES'),
 (11, 'DOCENTE'),
 (12, 'ESTUDIANTE');
+
 INSERT INTO `PeriodoAcademico` (`id`, `descripcion`) VALUES
 (1, 'Primero'),
 (2, 'Segundo'),
@@ -113,9 +121,11 @@ INSERT INTO `PeriodoAcademico` (`id`, `descripcion`) VALUES
 (4, 'Cuarto'),
 (5, 'Quinto'),
 (6, 'Sexto');
+
 INSERT INTO `PeriodoLectivo` (`id`, `descripcion`, `fechaInicio`, `fechaFin`, `matriculable`, `codigo`) VALUES
 (1, 'Mayo - Octubre 2017', '2017-05-01 00:00:00', '2017-10-31 00:00:00', 0, '2017-1'),
 (2, 'Noviembre 2017 - Abril 2018', '2017-11-01 00:00:00', '2018-04-30 00:00:00', 1, '2017-2');
+
 INSERT INTO `Roles` (`id`, `descripcion`, `acceso`) VALUES
 (1, 'Usuario por activar', 1),
 (2, 'Estudiante', 2),
@@ -126,9 +136,11 @@ INSERT INTO `Roles` (`id`, `descripcion`, `acceso`) VALUES
 (7, 'Rector', 7),
 (8, 'Vicerector', 8),
 (9, 'Coordinador de Carrera', 9);
+
 INSERT INTO `TipoAula` (`id`, `descripcion`) VALUES
 (1, 'AULA'),
 (2, 'LABORATORIO');
+
 INSERT INTO `TipoDiscapacidad` (`id`, `descripcion`) VALUES
 (1, 'AUDITIVA'),
 (2, 'FÍSICA'),
@@ -136,9 +148,11 @@ INSERT INTO `TipoDiscapacidad` (`id`, `descripcion`) VALUES
 (4, 'LENGUAJE'),
 (5, 'PSICOSOCIAL'),
 (6, 'VISUAL');
+
 INSERT INTO `TipoEducacionContinua` (`id`, `descripcion`) VALUES
 (1, 'ASISTENCIA'),
 (2, 'APROBACIÓN');
+
 INSERT INTO `TipoIngresos` (`id`, `descripcion`) VALUES
 (1, 'NINGUNO'),
 (2, '< 375 USD'),
@@ -147,14 +161,17 @@ INSERT INTO `TipoIngresos` (`id`, `descripcion`) VALUES
 (5, '1000 USD - 1500 USD'),
 (6, '1500 USD - 2000 USD'),
 (7, '> 2000 USD');
+
 INSERT INTO `TipoInstitucionProcedencia` (`id`, `descripcion`) VALUES
 (1, 'FISCAL'),
 (2, 'MUNICIPAL'),
 (3, 'PARTICULAR'),
 (4, 'FISCOMISIONAL');
+
 INSERT INTO `TipoRequisito` (`id`, `descripcion`) VALUES
 (1, 'PREREQUISITO'),
 (2, 'COREQUISITO');
+
 INSERT INTO `TipoSangre` (`id`, `descripcion`) VALUES
 (1, 'O+'),
 (2, 'O-'),
@@ -164,6 +181,7 @@ INSERT INTO `TipoSangre` (`id`, `descripcion`) VALUES
 (6, 'B-'),
 (7, 'AB+'),
 (8, 'AB-');
+
 INSERT INTO `Ubicacion` (`id`, `codigo`, `descripcion`, `codigoPadre`) VALUES
 (1, '345', 'ECUADOR', NULL),
 (2, '401', 'AFGANISTAN', NULL),
