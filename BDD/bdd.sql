@@ -545,6 +545,31 @@ CREATE TABLE AsignaturaCorrequisito (
      idAsignaturaCorrequisito INT NULL,
      PRIMARY KEY(id)
 );
+CREATE TABLE PortafolioDocente (
+    id INT AUTO_INCREMENT NOT NULL,
+    idComponentePd INT NULL,
+    idAsignatura INT NULL,
+    idEstadoComponentePd INT NULL,
+    idPeriodoLectivo INT NULL,
+    PRIMARY KEY(id)
+);
+
+CREATE TABLE ComponentePd (
+    id INT AUTO_INCREMENT NOT NULL,
+    componente VARCHAR(100) NULL,
+    estado INT NULL,
+    PRIMARY KEY(id)
+);
+
+SELECT PeriodoLectivo.id, PeriodoLectivo.descripcion, EstadoComponentePd.estadoComponente, PortafolioDocente.id FROM PortafolioDocente
+INNER JOIN
+
+CREATE TABLE EstadoComponentePd (
+    id INT AUTO_INCREMENT NOT NULL,
+    estadocomponente VARCHAR(100) NULL,
+    estado INT NULL,
+    PRIMARY KEY(id)
+);
 
 CREATE TABLE Silabo (
     id INT AUTO_INCREMENT NOT NULL,
@@ -556,7 +581,7 @@ CREATE TABLE Silabo (
     objetivoParte3 TEXT NULL,
     objetivoParte4 TEXT NULL,
     codigo VARCHAR(255) NULL,
-    idEstadoComponentePortafolioDocente INT NULL,
+    idPortafolioDocente INT NULL,
     PRIMARY KEY(id)
 );
 

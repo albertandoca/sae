@@ -9,6 +9,7 @@ import { AsistenciaEstudianteService } from '../asistencia-estudiante.service';
 import { AsignaturaDocenteAsistenciaEstudiante } from 'app/entidades/especifico/Asignatura-Docente-Asistencia-Estudiante';
 import { RegistroAsistenciaEstudiante } from 'app/entidades/especifico/Registro-Asistencia-Estudiante';
 import { Persona } from 'app/entidades/CRUD/Persona';
+import { HorasClase } from 'app/entidades/CRUD/HorasClase';
 import { AsignaturaDocente } from 'app/entidades/especifico/Asignatura-Docente';
 import { PeriodoLectivoActual } from 'app/entidades/especifico/Periodo-Lectivo-Actual';
 import { TotalHorasDia } from 'app/entidades/especifico/Total-Horas-Dia';

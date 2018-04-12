@@ -2,11 +2,11 @@ import { LoginResult } from 'app/entidades/especifico/Login-Result';
 import { Component, OnInit, ViewContainerRef } from '@angular/core';
 import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 
-
 import { AsignaturaDocenteAsistenciaEstudiante } from 'app/entidades/especifico/Asignatura-Docente-Asistencia-Estudiante';
 import { RegistroAsistenciaEstudiante } from 'app/entidades/especifico/Registro-Asistencia-Estudiante';
 import { AsistenciaEstudianteService } from '../asistencia-estudiante.service';
 import { Persona } from 'app/entidades/CRUD/Persona';
+import { HorasClase } from '../../../entidades/CRUD/HorasClase';
 import { AsignaturaDocente } from 'app/entidades/especifico/Asignatura-Docente';
 import { PeriodoLectivoActual } from 'app/entidades/especifico/Periodo-Lectivo-Actual';
 import { Router } from '@angular/router';
@@ -14,6 +14,7 @@ import { PeriodoLectivo } from 'app/entidades/CRUD/PeriodoLectivo';
 import { TotalHorasDia } from 'app/entidades/especifico/Total-Horas-Dia';
 import { GuardarAsistenciaEstudiante } from 'app/entidades/especifico/Guardar-Asistencia-Estudiante';
 import { ActualizarAsistenciaEstudiante } from 'app/entidades/especifico/Actualizar-Asistencia-Estudiante';
+
 @Component({
     selector: 'app-registro-asistencia',
     templateUrl: './registro-asistencia.component.html',
@@ -39,8 +40,9 @@ export class RegistroAsistenciaComponent implements OnInit {
     registroFin: number;
     totalHorasDia: TotalHorasDia;
     fechaMinima: string;
-    fechaMaxima: string
+    fechaMaxima: string;
     fechaCalculo: Date;
+    fechaString: string;
     mes: string;
     dia: string;
     segundosMin: number;
@@ -58,30 +60,40 @@ export class RegistroAsistenciaComponent implements OnInit {
         this.verGuardar = false;
         this.verActualizar = false;
         this.verImprimir = false;
-        this. fechaCalculo = new Date();
-        if ((this.fechaCalculo.getMonth() + 1) < 10) {
-            this.mes = '0' + (this.fechaCalculo.getMonth() + 1);
-        } else {
-            this.mes = (this.fechaCalculo.getMonth() + 1).toString();
-        }
-        if (this.fechaCalculo.getDate() < 10) {
-            this.dia = '0' + this.fechaCalculo.getDate();
-        } else {
-            this.dia = (this.fechaCalculo.getDate()).toString();
-        }
-        this.fechaMaxima = this.fechaCalculo.getFullYear() + '-' + this.mes + '-' + this.dia;
-        this.fechaRegistroAsistencia = this.fechaMaxima;
-        const logedResult = JSON.parse(localStorage.getItem('logedResult')) as LoginResult;
-        this.personaLogeada = logedResult.persona;
-        this.rol = logedResult.idRol;
-        if (this.rol === 3) {
-            this.paginaActual = 1;
-            this.paginaUltima = 1;
-            this.registrosPorPagina = 10;
-            this.getPeriodoLectivoActual();
-        } else {
-            this.router.navigate(['/login']);
-        }
+         this.fecha_hoy();
+    }
+
+    fecha_hoy() {
+        this.busy = this.asistenciaEstudianteDataService.leer_fecha_hoy()
+        .then(respuesta => {
+            this.fechaString = respuesta;
+            this.fechaCalculo = new Date(this.fechaString);
+           if ((this.fechaCalculo.getMonth() + 1) < 10) {
+                this.mes = '0' + (this.fechaCalculo.getMonth() + 1);
+            } else {
+                this.mes = (this.fechaCalculo.getMonth() + 1).toString();
+            }
+            if (this.fechaCalculo.getDate() < 10) {
+                this.dia = '0' + this.fechaCalculo.getDate();
+            } else {
+                this.dia = (this.fechaCalculo.getDate()).toString();
+            }
+            this.fechaMaxima = this.fechaCalculo.getFullYear() + '-' + this.mes + '-' + this.dia;
+            this.fechaRegistroAsistencia = this.fechaMaxima;
+            const logedResult = JSON.parse(localStorage.getItem('logedResult')) as LoginResult;
+            this.personaLogeada = logedResult.persona;
+            this.rol = logedResult.idRol;
+            if (this.rol === 3) {
+                this.paginaActual = 1;
+                this.paginaUltima = 1;
+                this.registrosPorPagina = 10;
+                this.getPeriodoLectivoActual();
+            } else {
+                this.router.navigate(['/login']);
+            }
+        })
+        .catch(error => {
+        });
     }
 
     getAsignaturasAsistencias(idPersona: number, idPeriodo: number) {
@@ -115,9 +127,11 @@ export class RegistroAsistenciaComponent implements OnInit {
                 }
                 this.fechaMinima = this.fechaCalculo.getFullYear() + '-' + this.mes + '-' + this.dia;
             } else {
-                this. fechaCalculo = new Date();
-                if (this.fechaCalculo.getDay() === 1) {
-                    this.segundosMin = this.fechaCalculo.setSeconds(-5 * 86400); //cambiar -5 y -3 por variables
+                this. fechaCalculo = new Date(this.fechaString);
+                if (this.fechaCalculo.getDay() === 1 || this.fechaCalculo.getDay() === 2 || this.fechaCalculo.getDay() === 3) {
+                    this.segundosMin = this.fechaCalculo.setSeconds(-5 * 86400); // cambiar -5, -4, -3 por variables
+                } else if (this.fechaCalculo.getDay() === 0) {
+                    this.segundosMin = this.fechaCalculo.setSeconds(-4 * 86400);
                 } else {
                     this.segundosMin = this.fechaCalculo.setSeconds(-3 * 86400);
                 }
@@ -162,7 +176,8 @@ export class RegistroAsistenciaComponent implements OnInit {
             this.asignaturasDocente[this.asignaturaSeleccionada].idParalelo, this.fechaRegistroAsistencia, this.totalHorasDia.horas)
         .then(respuesta => {
             this.registroAsistencia = respuesta;
-            if (this.registroAsistencia[0].idAsistencia == null) {
+            // tslint:disable-next-line:triple-equals
+            if (this.registroAsistencia[0].idAsistencia == 0) {
                 this.verGuardar = true;
                 this.verActualizar = false;
             } else {
@@ -214,8 +229,31 @@ export class RegistroAsistenciaComponent implements OnInit {
         this.registroInicio = (this.paginaActual * this.registrosPorPagina) - this.registrosPorPagina;
     }
 
-    crear() {
+    guardar_horas_dia() {
         this.verGuardar = false;
+        var horasDia = new HorasClase();
+        horasDia.id =  0,
+        horasDia.idAsignatura = this.asignaturasDocente[this.asignaturaSeleccionada].idAsignatura,
+        horasDia.idParalelo = this.asignaturasDocente[this.asignaturaSeleccionada].idParalelo,
+        horasDia.fecha = new Date(this.fechaRegistroAsistencia),
+        horasDia.horas = this.totalHorasDia.horas
+        this.busy = this.asistenciaEstudianteDataService.guardarHorasDia(horasDia)
+        .then(respuesta => {
+            this.confirmaAccion = respuesta;
+            if (this.confirmaAccion) {
+                this.guardar_asistencia();
+            } else {
+                this.toastr.warning('Se produjo un error', 'Guardar NO Ok');
+                this.borrar();
+            }
+        })
+        .catch(error => {
+            this.toastr.warning('Se produjo un error', 'Guardar NO Ok');
+            this.borrar();
+        });
+    }
+
+    guardar_asistencia() {
         this.guardarAsistenciaDia = [];
         for (let i = 0;  i < this.registroAsistencia.length; i++) {
             this.guardarAsistenciaDia.push (
@@ -227,9 +265,10 @@ export class RegistroAsistenciaComponent implements OnInit {
                 }
             );
         }
+         
         this.busy = this.asistenciaEstudianteDataService.create(this.guardarAsistenciaDia)
-        .then(respuesta => {
-            this.confirmaAccion = respuesta;
+        .then(respuesta1 => {
+            this.confirmaAccion = respuesta1;
             if (this.confirmaAccion) {
                 this.toastr.success('Los registros fueron guardaron', 'Guardar Ok');
                 this.getRegistroAsitenciaEstudiante();

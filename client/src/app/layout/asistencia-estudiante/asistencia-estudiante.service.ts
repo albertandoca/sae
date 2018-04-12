@@ -1,6 +1,8 @@
 import { AsignaturaDocenteAsistenciaEstudiante } from './../../entidades/especifico/Asignatura-Docente-Asistencia-Estudiante';
 import { RegistroAsistenciaEstudiante } from './../../entidades/especifico/Registro-Asistencia-Estudiante';
 import { Asignatura } from './../../entidades/CRUD/Asignatura';
+import { HorasClase } from './../../entidades/CRUD/HorasClase';
+import { PeriodoLectivoActual } from 'app/entidades/especifico/Periodo-Lectivo-Actual';
 import { GuardarAsistenciaEstudiante } from 'app/entidades/especifico/Guardar-Asistencia-Estudiante';
 import { ActualizarAsistenciaEstudiante } from 'app/entidades/especifico/Actualizar-Asistencia-Estudiante';
 import { TotalHorasDia } from './../../entidades/especifico/Total-Horas-Dia';
@@ -9,7 +11,8 @@ import { Headers, Http } from '@angular/http';
 import { environment } from './../../../environments/environment';
 
 import 'rxjs/add/operator/toPromise';
-import { PeriodoLectivoActual } from 'app/entidades/especifico/Periodo-Lectivo-Actual';
+
+
 
 @Injectable()
 
@@ -22,7 +25,8 @@ export class AsistenciaEstudianteService {
    }
 
    getAsignaturaDocenteAsistenciaEstudiante(idPersona: number, idPeriodoLectivo: number): Promise<AsignaturaDocenteAsistenciaEstudiante[]> {
-      const url = `${this.urlBase + 'asignatura_docente/leer?idPersona=' + idPersona.toString() + '&idPeriodoLectivo=' + idPeriodoLectivo.toString()}`;
+      const url = `${this.urlBase + 'asignatura_docente/leer?idPersona=' + idPersona.toString() + 
+      '&idPeriodoLectivo=' + idPeriodoLectivo.toString()}`;
       return this.http.get(url)
       .toPromise()
       .then(response => {
@@ -55,8 +59,11 @@ export class AsistenciaEstudianteService {
         .catch(this.handleError);
     }
 
-    getRegistroAsitenciaEstudiante(idAsignatura: number, idPeriodoLectivo: number, idParalelo: number, fecha: string, horas: number): Promise<RegistroAsistenciaEstudiante[]> {
-        const url = `${this.urlBase + 'asistencias_estudiante/leer?idAsignatura=' + idAsignatura.toString() + '&idPeriodoLectivo=' + idPeriodoLectivo.toString() + '&idParalelo=' + idParalelo.toString() + '&fecha=' + fecha.toString() + '&horas=' + horas.toString()}`;
+    getRegistroAsitenciaEstudiante(idAsignatura: number, idPeriodoLectivo: number, 
+        idParalelo: number, fecha: string, horas: number): Promise<RegistroAsistenciaEstudiante[]> {
+        const url = `${this.urlBase + 'asistencias_estudiante/leer?idAsignatura=' + idAsignatura.toString() + '&idPeriodoLectivo=' + 
+        idPeriodoLectivo.toString() + '&idParalelo=' + idParalelo.toString() + '&fecha=' + 
+        fecha.toString() + '&horas=' + horas.toString()}`;
         return this.http.get(url)
         .toPromise()
         .then(response => {
@@ -66,9 +73,33 @@ export class AsistenciaEstudianteService {
         .catch(this.handleError);
     }
 
-    create(guardarAsistenciaDia: GuardarAsistenciaEstudiante[]): Promise<boolean> {
-        const url = `${this.urlBase + 'asistencias_estudiante/crear1?asistenciaDia=' + (JSON.stringify(guardarAsistenciaDia)).toString()}`;
+    /*create(guardarAsistenciaDia: GuardarAsistenciaEstudiante[]): Promise<boolean> {
+        const url = `${this.urlBase + 'asistencias_estudiante/crear?asistenciaDia=' + (JSON.stringify(guardarAsistenciaDia)).toString()}`;
         return this.http.get(url)
+        .toPromise()
+        .then(response => response.json())
+        .catch(this.handleError);
+     }*/
+
+     create(guardarAsistenciaDia: GuardarAsistenciaEstudiante[]): Promise<boolean> {
+        const url = `${this.urlBase + 'asistencias_estudiante/crear'}`;
+        return this.http.post(url, JSON.stringify(guardarAsistenciaDia))
+        .toPromise()
+        .then(response => response.json())
+        .catch(this.handleError);
+     }
+
+    leer_fecha_hoy(): Promise<string> {
+        const url = `${this.urlBase + 'asistencias_estudiante/leer_fecha_hoy'}`;
+        return this.http.get(url)
+        .toPromise()
+        .then(response => response.json())
+        .catch(this.handleError);
+    }
+
+    guardarHorasDia(horasDia: HorasClase): Promise<boolean> {
+        const url = `${this.urlBase + 'horasclase/crear'}`;
+        return this.http.post(url, JSON.stringify(horasDia))
         .toPromise()
         .then(response => response.json())
         .catch(this.handleError);

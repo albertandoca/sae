@@ -14,7 +14,7 @@
           <button type="button" class="btn btn-default" (click)="getTotalHorasDia()">
             <span class="fa fa-refresh"></span>&nbsp;Reporte
           </button>
-          <button type="button" class="btn btn-success" *ngIf="verGuardar" (click)="crear()">
+          <button type="button" class="btn btn-success" *ngIf="verGuardar" (click)="guardar_horas_dia()">
             <span class="fa fa-edit"></span>&nbsp;Guardar
           </button>
           <button type="button" class="btn btn-info" *ngIf="verActualizar" (click)="actualizar()">
@@ -40,7 +40,7 @@
       <label for="fecha">Fecha:</label>
     </div>
     <div class="col-xs-10 col-sm-10 col-md-3 col-lg-3">
-      <input type="date" id="fecha" name="fecha" class="form-control" min={{fechaMinima}} max={{fechaMaxima}} [(ngModel)]="fechaRegistroAsistencia">
+      <input type="date" id="fecha" name="fecha" class="form-control" min={{fechaMinima}} max={{fechaMaxima}} [ngModel]="fechaRegistroAsistencia | date:'yyyy-MM-dd'" (ngModelChange)="fechaRegistroAsistencia = $event">
     </div>
   </div>
   <div class="row" style="margin-top:15px">
@@ -63,13 +63,19 @@
                 <strong>Horas</strong>
               </span>
             </th>
+            <th scope="col">
+              <span>
+              <strong>% Asistencia</strong>
+            </span>
+          </th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let registro of registroAsistencia let i = index">
             <td contenteditable="false" *ngIf="i >= registroInicio && i < registroFin">{{i + 1}}</td>
             <td contenteditable="false" *ngIf="i >= registroInicio && i < registroFin">{{registro.nombre}}</td>
-            <td contenteditable="true" *ngIf="i >= registroInicio && i < registroFin"><input type="number" id="horasDia" name="horasDia" min=0 max={{totalHorasDia.horas}} value="{{registro.horas}}"  [(ngModel)]="registro.horas"></td>
+            <td contenteditable="true" *ngIf="i >= registroInicio && i < registroFin"><input type="number" id="horasDia" name="horasDia" min=0 max={{totalHorasDia.horas}} value="{{registro.horas}}"  [(ngModel)]="registro.horas" [style.color]="registro.horas < totalHorasDia.horas ? 'red' : 'black'"></td>
+            <td contenteditable="false" *ngIf="i >= registroInicio && i < registroFin">{{ registro.totalHoras + registro.horas }}</td>
           </tr>
         </tbody>
       </table>
