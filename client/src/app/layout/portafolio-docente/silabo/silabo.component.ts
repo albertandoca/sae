@@ -48,7 +48,6 @@ export class SilaboComponent implements OnInit {
     ngOnInit() {
         this.cambioGenero();
         this.sangreGenero();
-        this.cont = 'content';
         this.open(this.cont);
         const logedResult = JSON.parse(localStorage.getItem('logedResult')) as LoginResult;
         this.personaLogeada = logedResult.persona;

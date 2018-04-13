@@ -64,9 +64,9 @@
         <ngb-tab title="Datos" id="tab1">
             <ng-template ngbTabContent>
                 <div class="container-fluid card">
-                    <input type="number" id="fecha" class="form-control" min={{fechaMinima}} max={{fechaMaxima}} [ngModel]="fechaRegistroAsistencia | date:'yyyy-MM-dd'" (ngModelChange)="fechaRegistroAsistencia = $event">
+                    <input type="number" id="docente" class="form-control" [ngModel]="fechaRegistroAsistencia | date:'yyyy-MM-dd'" (ngModelChange)="fechaRegistroAsistencia = $event">
 
-                    <input type="number" id="horasDia"  min=0 max={{totalHorasDia.horas}} value="{{registro.horas}}"  [(ngModel)]="registro.horas" [style.color]="registro.horas < totalHorasDia.horas ? 'red' : 'black'">
+                    <input type="number" id="asignatura"  min=0 max={{totalHorasDia.horas}} value="{{registro.horas}}"  [(ngModel)]="registro.horas" [style.color]="registro.horas < totalHorasDia.horas ? 'red' : 'black'">
                     
                 </div>
             </ng-template>
@@ -74,9 +74,9 @@
         <ngb-tab title="Informacion" id="tab2">
             <ng-template ngbTabContent>
                 <div class="container-fluid card">
-                    <input type="number" id="fecha"  class="form-control" min={{fechaMinima}} max={{fechaMaxima}} [ngModel]="fechaRegistroAsistencia | date:'yyyy-MM-dd'" (ngModelChange)="fechaRegistroAsistencia = $event">
+                    <input type="number" id="paralelo"  class="form-control" min={{fechaMinima}} max={{fechaMaxima}} [ngModel]="fechaRegistroAsistencia | date:'yyyy-MM-dd'" (ngModelChange)="fechaRegistroAsistencia = $event">
 
-                    <input type="date" id="horasDia"  min=0 max={{totalHorasDia.horas}} value="{{registro.horas}}"  [(ngModel)]="registro.horas" [style.color]="registro.horas < totalHorasDia.horas ? 'red' : 'black'">
+                    <input type="date" id="nombre"  min=0 max={{totalHorasDia.horas}} value="{{registro.horas}}"  [(ngModel)]="registro.horas" [style.color]="registro.horas < totalHorasDia.horas ? 'red' : 'black'">
               
                     
                 </div>

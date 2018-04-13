@@ -39,7 +39,7 @@
     </thead>
     <tbody>
         <tr *ngFor="let registro of registroAsistencia let i = index">
-        <td contenteditable="false" *ngIf="i >= registroInicio && i < registroFin">{{i + 1}}</td>
+        <td>{{i + 1}}</td>
         <td contenteditable="false" *ngIf="i >= registroInicio && i < registroFin">{{registro.nombre}}</td>
         <td contenteditable="true" *ngIf="i >= registroInicio && i < registroFin"><input type="number" id="horasDia" name="horasDia" min=0 max={{totalHorasDia.horas}} value="{{registro.horas}}"  [(ngModel)]="registro.horas" [style.color]="registro.horas < totalHorasDia.horas ? 'red' : 'black'"></td>
         <td contenteditable="false" *ngIf="i >= registroInicio && i < registroFin">{{ registro.totalHoras + registro.horas }}</td>
@@ -83,3 +83,23 @@ open(content, nuevo){
          //Esto se ejecuta si la ventana se cierra sin aceptar los cambios
       }));
    }
+
+
+<div class="card-block">
+    <ngb-tabset [activeId]="activeTab" #tabs (tabChange)="cambio()">
+        <ngb-tab title="1. Origen" id="tab1">
+            <ng-template ngbTabContent>
+                <div class="container-fluid card">
+                    
+                </div>
+            </ng-template>
+        </ngb-tab>
+        <ngb-tab title="2. Identificación" id="tab2">
+            <ng-template ngbTabContent>
+                <div class="container-fluid card">
+                    
+                </div>
+            </ng-template>
+        </ngb-tab>
+    </ngb-tabset>
+</div>

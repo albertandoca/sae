@@ -4,6 +4,10 @@
     // Para más información, visite: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+<<<<<<< HEAD
+=======
+        
+>>>>>>> 992520fae1c452f0b4a142caf9755559910792c8
         {
             "name": "Listen for XDebug",
             "type": "php",

@@ -1,4 +1,5 @@
 USE ignug;
+
 INSERT INTO `AsignaturaCupo` (`id`,`idCupo`,`idAsignatura`) VALUES (1,2,1);
 INSERT INTO `AsignaturaCupo` (`id`,`idCupo`,`idAsignatura`) VALUES (2,2,2);
 INSERT INTO `AsignaturaCupo` (`id`,`idCupo`,`idAsignatura`) VALUES (3,2,3);

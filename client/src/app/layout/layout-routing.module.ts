@@ -34,9 +34,14 @@ const routes: Routes = [
             { path: 'carrerainstituto', loadChildren: '../CRUD/carrerainstituto/carrerainstituto.module#CarreraInstitutoModule' },
             { path: 'rolsecundario', loadChildren: '../CRUD/rolsecundario/rolsecundario.module#RolSecundarioModule' },
             { path: 'logmailsender', loadChildren: '../CRUD/logmailsender/logmailsender.module#LogMailSenderModule' },
+<<<<<<< HEAD
             { path: 'registro-asistencia', loadChildren: './asistencia-estudiante/registro-asistencia/registro-asistencia.module#RegistroAsistenciaModule' },
             { path: 'menu-pd', loadChildren: './portafolio-docente/menu-pd/menu-pd.module#MenuPdModule' },
             { path: 'silabo', loadChildren: './portafolio-docente/silabo/silabo.module#SilaboModule' },
+=======
+        { path: 'registro-asistencia', loadChildren: './asistencia-estudiante/registro-asistencia/registro-asistencia.module#RegistroAsistenciaModule' },
+        { path: 'carlos', loadChildren: './carlos/carlos.module#CarlosModule' },
+>>>>>>> 992520fae1c452f0b4a142caf9755559910792c8
             /*{
                 path: 'asistencia-justificacion',
                 loadChildren: './asistencia-justificacion/asistencia-justificacion.module#AsistenciaJustificacionModule'
