@@ -26,21 +26,22 @@ export class HorasClaseComponent implements OnInit {
    registrosPorPagina: number;
    esVisibleVentanaEdicion: boolean;
 
-   constructor(public toastr: ToastsManager, vcr: ViewContainerRef, private dataService: HorasClaseService, private modalService: NgbModal) {
+   constructor(public toastr: ToastsManager, vcr: ViewContainerRef, 
+    private dataService: HorasClaseService, private modalService: NgbModal) {
       this.toastr.setRootViewContainerRef(vcr);
    }
 
-   open(content, nuevo){
-      if(nuevo){
+   open(content, nuevo) {
+      if (nuevo) {
          this.resetEntidadSeleccionada();
       }
       this.modalService.open(content)
       .result
       .then((result => {
-         if(result=="save"){
+         if (result == "save") {
             this.aceptar();
          }
-      }),(result => {
+      }), (result => {
          //Esto se ejecuta si la ventana se cierra sin aceptar los cambios
       }));
    }

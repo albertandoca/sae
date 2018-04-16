@@ -1,4 +1,10 @@
+<<<<<<< HEAD:BDD/2 catalogos.sql
 use ignug;
+=======
+USE ignug;
+
+<<<<<<< HEAD
+>>>>>>> 3491fab01e24f31352e930441b90a5392d70e3b4:BDD/catalogos.sql
 INSERT INTO Asignatura ( idMalla, codigo, nombre, idPeriodoAcademico, horasPractica, horasDocente, horasAutonomas) VALUES
 (2,'DS_MD_1','Matemática discreta','1','0','48','27'),
 (2,'DS_IDS_1','Introducción al desarrollo de software','1','12','60','27'),
@@ -64,6 +70,8 @@ INSERT INTO `Malla` (`fechaMallaInicio`, `idCarrera`) VALUES ('2015-02-02', '3')
 INSERT INTO `Malla` (`fechaMallaInicio`, `idCarrera`) VALUES ('2015-02-02', '4');
 INSERT INTO `Malla` (`fechaMallaInicio`, `idCarrera`) VALUES ('2015-02-02', '5');
 
+=======
+>>>>>>> 992520fae1c452f0b4a142caf9755559910792c8
 INSERT INTO `Carrera` (`id`, `resolucion`, `nombre`, `descripcion`, `idModalidad`, `idInstituto`, `siglas`) VALUES
 (1, '1', 'TECNOLOGÍA SUPERIOR EN DESARROLLO DE SOFTWARE ', 'TECNOLOGÍA SUPERIOR EN DESARROLLO DE SOFTWARE ', 1, 1, 'DS'),
 (2, '2', 'MARKETING', 'MARKETING', 1, 2, 'MK'),
@@ -118,11 +126,19 @@ INSERT INTO `Genero` (`id`, `descripcion`) VALUES
 (1, 'MASCULINO'),
 (2, 'FEMENINO'),
 (3, 'OTROS');
+<<<<<<< HEAD
 INSERT INTO `Instituto` (`id`, `descripcion`, `color`) VALUES
 (1, 'INSTITUTO TECNOLÓGICO SUPERIOR BENITO JUÁREZ', 'verde'),
 (2, 'INSTITUTO TECNOLÓGICO SUPERIOR 24 DE MAYO', 'rojo'),
 (3, 'INSTITUTO TECNOLÓGICO SUPERIOR GRAN COLOMBIA', 'amarillo'),
 (4, 'INSTITUTO TECNOLÓGICO SUPERIOR DE TURISMO Y PATRIMONIO YAVIRAC', 'azul');
+=======
+INSERT INTO `Instituto` (`id`, `descripcion`, `ruc`, `direccion`,`telefono1`, `telefono2`, `resolución`, `color`) VALUES
+(1, 'INSTITUTO TECNOLÓGICO SUPERIOR BENITO JUÁREZ', '012234545', 'QUITO', '2456315','2456315', 'BJ001', 'verde'),
+(2, 'INSTITUTO TECNOLÓGICO SUPERIOR 24 DE MAYO', '012234546', 'QUITO', '2456315','2456315', 'MAY001','rojo'),
+(3, 'INSTITUTO TECNOLÓGICO SUPERIOR GRAN COLOMBIA', '012234547', 'QUITO' ,'2456315','2456315', 'SGC001', 'amarillo'),
+(4, 'INSTITUTO TECNOLÓGICO SUPERIOR DE TURISMO Y PATRIMONIO YAVIRAC', '012234548', 'QUITO' ,'2456315','2456315', 'STY001','azul');
+>>>>>>> 992520fae1c452f0b4a142caf9755559910792c8
 INSERT INTO `Jornada` (`id`, `descripcion`) VALUES
 (1, 'MATUTINA'),
 (2, 'VESPERTINA'),
@@ -156,8 +172,8 @@ INSERT INTO `NivelTitulo` (`id`, `descripcion`) VALUES
 (1, 'NINGUNO'),
 (2, 'BACHILLERATO'),
 (3, 'TÉCNICO'),
-(4, 'LICENCIATURA'),
-(5, 'INGENIERÍA'),
+(4, 'TECNOLÓGICO'),
+(5, 'TERCER NIVEL'),
 (6, 'MAESTRÍA'),
 (7, 'DOCTORADO');
 INSERT INTO `CarreraInstituto` (`idCarrera`, `idInstituto`) VALUES
@@ -179,12 +195,21 @@ INSERT INTO `Ocupacion` (`id`, `descripcion`) VALUES
 (11, 'DOCENTE'),
 (12, 'ESTUDIANTE');
 INSERT INTO `PeriodoAcademico` (`id`, `descripcion`) VALUES
+<<<<<<< HEAD
 (1, 'PRIMERO'),
 (2, 'SEGUNDO'),
 (3, 'TERCERO'),
 (4, 'CUARTO'),
 (5, 'QUINTO'),
 (6, 'SEXTO');
+=======
+(1, 'Primero'),
+(2, 'Segundo'),
+(3, 'Tercero'),
+(4, 'Cuarto'),
+(5, 'Quinto'),
+(6, 'Sexto');
+>>>>>>> 992520fae1c452f0b4a142caf9755559910792c8
 INSERT INTO `PeriodoLectivo` (`id`, `descripcion`, `fechaInicio`, `fechaFin`, `matriculable`, `codigo`) VALUES
 (1, 'Mayo - Octubre 2017', '2017-05-01 00:00:00', '2017-10-31 00:00:00', 0, '2017-1'),
 (2, 'Noviembre 2017 - Abril 2018', '2017-11-01 00:00:00', '2018-04-30 00:00:00', 0, '2017-2'),
@@ -203,7 +228,7 @@ INSERT INTO `TipoAula` (`id`, `descripcion`) VALUES
 (1, 'AULA'),
 (2, 'LABORATORIO');
 INSERT INTO `TipoDiscapacidad` (`id`, `descripcion`) VALUES
-(1, 'ADITIVA'),
+(1, 'AUDITIVA'),
 (2, 'FÍSICA'),
 (3, 'INTELECTUAL'),
 (4, 'LENGUAJE'),
@@ -1931,8 +1956,14 @@ INSERT INTO `Ubicacion` (`id`, `codigo`, `descripcion`, `codigoPadre`) VALUES
 (1691, '345.1.1.1225', 'VICTORIA DEL PORTETE (IRQUIS)', '345.1.1'),
 (1692, '345.1.1.1226', 'YANUNCAY', '345.1.1');
 
+<<<<<<< HEAD:BDD/2 catalogos.sql
 INSERT INTO `Cargo` (`id`,`descripcion`) VALUES (1,'RECTOR');
 INSERT INTO `Cargo` (`id`,`descripcion`) VALUES (2,'VICE RECTOR');
+=======
+<<<<<<< HEAD
+INSERT INTO `Cargo` (`id`,`descripcion`) VALUES (1,'RECTOR/A');
+INSERT INTO `Cargo` (`id`,`descripcion`) VALUES (2,'VICE RECTOR/A');
+>>>>>>> 3491fab01e24f31352e930441b90a5392d70e3b4:BDD/catalogos.sql
 INSERT INTO `Cargo` (`id`,`descripcion`) VALUES (3,'CORRDINADOR/A DE CARRERA');
 INSERT INTO `Cargo` (`id`,`descripcion`) VALUES (4,'CORRDINADOR/A ACADÉMICO/A');
 INSERT INTO `Cargo` (`id`,`descripcion`) VALUES (5,'CORRDINADOR/A DE VINCULACIÓN');
@@ -1955,6 +1986,12 @@ INSERT INTO `CargoInstituto` (`id`,`idInstituto`, `idPersona`, `idCargo`, `fecha
 INSERT INTO `CargoCarrera` (`id`,`idCarrera`, `idPersona`, `idCargo`, `fechaInicio`) VALUES
 (1, 1, 30, 3, '2017-03-01'),
 (2, 2, 64, 3, '2017-03-01'),
+<<<<<<< HEAD:BDD/2 catalogos.sql
 (3, 3, 50, 3, '2017-03-01'),
 (4, 5, 36, 3, '2017-03-01'),
 (5, 4, 33, 3, '2017-03-01');
+=======
+(3, 3, 50, 3, '2017-03-01');
+=======
+>>>>>>> 992520fae1c452f0b4a142caf9755559910792c8
+>>>>>>> 3491fab01e24f31352e930441b90a5392d70e3b4:BDD/catalogos.sql
