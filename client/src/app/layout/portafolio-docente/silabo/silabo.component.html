@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <div class="container">
     <div class="row">
         <div class="col-md-12 text-right">
@@ -259,93 +258,5 @@
 </ng-template>
 
 
-=======
-<select id="genero" class="form-control" [(ngModel)]="generoSeleccionada" (change)="prueba()">
-  <option *ngFor='let genero1 of genero let j = index' value={{j}}>{{genero1.descripcion}}</option>
-</select>
-
-<div>
-<table class="table table-striped table-bordered table-editable">
-  <thead class="thead-dark ">
-      <tr>
-      <th scope="col">
-          <span>
-          <strong>Id.</strong>
-          </span>
-      </th>
-      <th scope="col">
-          <span>
-              <strong>Descripcion</strong>
-          </span>
-      </th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr *ngFor="let sangre of tipoSangre">
-      <td contenteditable="false">{{sangre.id}}</td>
-      <td contenteditable="false">{{sangre.descripcion}}</td>
-      </tr>
-  </tbody>
-</table>
-</div>
-
-
-
-<button type="button" class="btn btn-success" (click)="open(content)">
-    <span class="fa fa-edit"></span>&nbsp;Guardar
-</button>
-
-<ng-template #content let-c="close" let-d="dismiss">
-  <div class="modal-header">
-      <h4 class="modal-title">
-      <span>
-          Mi primera ventana modal
-      </span>
-      </h4>
-      <button type="button" class="close" aria-label="Close" (click)="d('ClickEnX')">
-      <span aria-hidden="true">&times;</span>
-      </button>
-  </div>
-  <div class="modal-body">
-      <select id="asignaturaDocente" class="form-control" [(ngModel)]="asignaturaSeleccionada" >
-          <option *ngFor='let asignatura of asignaturaDocente let j = index' value={{j}}>{{asignatura.nombre}}</option>
-      </select>
-      
-  </div>
-  <div class="modal-footer">
-
-      <button type="button" class="btn btn-primary col-offset-sm-4" (click)="c('save')">
-      <span class="fa fa-save"></span>&nbsp;Guardar
-      </button>
-      <button type="button" class="btn btn-default" (click)="c('close')">Cerrar</button>
-  </div>
-</ng-template>
-
-<div class="card-block">
-    <ngb-tabset [activeId]="activeTab" #tabs (tabChange)="cambio()">
-        <ngb-tab title="Datos" id="tab1">
-            <ng-template ngbTabContent>
-                <div class="container-fluid card">
-                    <input type="number" id="docente" class="form-control" [ngModel]="fechaRegistroAsistencia | date:'yyyy-MM-dd'" (ngModelChange)="fechaRegistroAsistencia = $event">
-
-                    <input type="number" id="asignatura"  min=0 max={{totalHorasDia.horas}} value="{{registro.horas}}"  [(ngModel)]="registro.horas" [style.color]="registro.horas < totalHorasDia.horas ? 'red' : 'black'">
-                    
-                </div>
-            </ng-template>
-        </ngb-tab>
-        <ngb-tab title="Informacion" id="tab2">
-            <ng-template ngbTabContent>
-                <div class="container-fluid card">
-                    <input type="number" id="paralelo"  class="form-control" min={{fechaMinima}} max={{fechaMaxima}} [ngModel]="fechaRegistroAsistencia | date:'yyyy-MM-dd'" (ngModelChange)="fechaRegistroAsistencia = $event">
-
-                    <input type="date" id="nombre"  min=0 max={{totalHorasDia.horas}} value="{{registro.horas}}"  [(ngModel)]="registro.horas" [style.color]="registro.horas < totalHorasDia.horas ? 'red' : 'black'">
-              
-                    
-                </div>
-            </ng-template>
-        </ngb-tab>
-    </ngb-tabset>
-</div>
->>>>>>> 3491fab01e24f31352e930441b90a5392d70e3b4
 
 

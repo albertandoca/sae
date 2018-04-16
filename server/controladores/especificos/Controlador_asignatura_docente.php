@@ -25,22 +25,15 @@ class Controlador_asignatura_docente extends Controlador_Base
         $idPersona = $args["idPersona"];
         $idPeriodoLectivo = $args["idPeriodoLectivo"];
 
-<<<<<<< HEAD
         $sql = "SELECT Carrera.id, Carrera.resolucion, Carrera.nombre, Carrera.descripcion,
                 Modalidad.descripcion AS modalidad, Instituto.descripcion AS instituto, Carrera.siglas FROM Carrera
-=======
-        $sql = "SELECT Carrera.id, Carrera.resolucion, Carrera.nombre, Carrera.descripcion, Carrera.idModalidad, Carrera.idInstituto, Carrera.siglas FROM Carrera
->>>>>>> 3491fab01e24f31352e930441b90a5392d70e3b4
                 INNER JOIN Malla ON Malla.idCarrera = Carrera.id
                 INNER JOIN Asignatura ON Asignatura.idMalla = Malla.id
                 INNER JOIN DocenteAsignatura ON  DocenteAsignatura.idAsignatura = Asignatura.id
                 INNER JOIN Docente ON Docente.id = DocenteAsignatura.idDocente
                 INNER JOIN Persona ON Persona.id = Docente.idPersona
-<<<<<<< HEAD
                 INNER JOIN Modalidad ON Modalidad.id = Carrera.idModalidad
                 INNER JOIN Instituto ON Instituto.id = Carrera.idInstituto
-=======
->>>>>>> 3491fab01e24f31352e930441b90a5392d70e3b4
                 WHERE Persona.id = ? AND DocenteAsignatura.idPeriodoLectivo = ?
                 GROUP BY Carrera.id
                 ORDER BY Carrera.Nombre;";
@@ -55,25 +48,18 @@ class Controlador_asignatura_docente extends Controlador_Base
         $idPeriodoLectivo = $args["idPeriodoLectivo"];
         $idCarrera = $args["idCarrera"];
 
-<<<<<<< HEAD
         $sql = "SELECT Asignatura.id, YEAR(Malla.fechaMallaInicio) AS malla, Asignatura.codigo, Asignatura.nombre,
                 PeriodoAcademico.descripcion  AS periodoAcademicoDescripcion, Asignatura.horasPractica, Asignatura.horasDocente,
                 Asignatura.horasAutonomas, Asignatura.credito, UnidadOrganizacion.descripcion AS unidadOrganizacion, CampoFormacion.descripcion AS campoFormacion
                 FROM Asignatura
-=======
-        $sql = "SELECT Asignatura.id, Asignatura.idMalla, Asignatura.codigo, Asignatura.nombre, Asignatura.idPeriodoAcademico, Asignatura.horasPractica, Asignatura.horasDocente, Asignatura.horasAutonomas, Asignatura.idUnidadOrganizacion, Asignatura.idCampoFormacion FROM Asignatura
->>>>>>> 3491fab01e24f31352e930441b90a5392d70e3b4
                 INNER JOIN Malla ON Malla.id = Asignatura.idMalla
                 INNER JOIN Carrera ON Carrera.id = Malla.idCarrera
                 INNER JOIN DocenteAsignatura ON  DocenteAsignatura.idAsignatura = Asignatura.id
                 INNER JOIN Docente ON Docente.id = DocenteAsignatura.idDocente
                 INNER JOIN Persona ON Persona.id = Docente.idPersona
-<<<<<<< HEAD
                 INNER JOIN UnidadOrganizacion ON UnidadOrganizacion.id = Asignatura.idUnidadOrganizacion
                 INNER JOIN CampoFormacion ON CampoFormacion.id = Asignatura.idCampoFormacion
                 INNER JOIN PeriodoAcademico ON PeriodoAcademico.id = Asignatura.idPeriodoAcademico
-=======
->>>>>>> 3491fab01e24f31352e930441b90a5392d70e3b4
                 WHERE Persona.id = ? AND DocenteAsignatura.idPeriodoLectivo = ? AND Carrera.id = ?
                 GROUP BY Asignatura.id
                 ORDER BY Asignatura.nombre;";

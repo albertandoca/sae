@@ -30,21 +30,12 @@ const routes: Routes = [
             { path: 'asignatura', loadChildren: '../CRUD/asignatura/asignatura.module#AsignaturaModule' },
             { path: 'asignaturasolicitudmatricula', loadChildren: '../CRUD/asignaturasolicitudmatricula/asignaturasolicitudmatricula.module#AsignaturaSolicitudMatriculaModule' },
             { path: 'asistencia', loadChildren: '../CRUD/asistencia/asistencia.module#AsistenciaModule' },
-            { path: 'asistencia-registro', loadChildren: './asistencia-registro/asistencia-registro.module#AsistenciaRegistroModule' },
             { path: 'carrerainstituto', loadChildren: '../CRUD/carrerainstituto/carrerainstituto.module#CarreraInstitutoModule' },
             { path: 'rolsecundario', loadChildren: '../CRUD/rolsecundario/rolsecundario.module#RolSecundarioModule' },
             { path: 'logmailsender', loadChildren: '../CRUD/logmailsender/logmailsender.module#LogMailSenderModule' },
-<<<<<<< HEAD
             { path: 'registro-asistencia', loadChildren: './asistencia-estudiante/registro-asistencia/registro-asistencia.module#RegistroAsistenciaModule' },
             { path: 'menu-pd', loadChildren: './portafolio-docente/menu-pd/menu-pd.module#MenuPdModule' },
             { path: 'silabo', loadChildren: './portafolio-docente/silabo/silabo.module#SilaboModule' },
-<<<<<<< HEAD
-=======
-=======
-        { path: 'registro-asistencia', loadChildren: './asistencia-estudiante/registro-asistencia/registro-asistencia.module#RegistroAsistenciaModule' },
-        { path: 'carlos', loadChildren: './carlos/carlos.module#CarlosModule' },
->>>>>>> 992520fae1c452f0b4a142caf9755559910792c8
->>>>>>> 3491fab01e24f31352e930441b90a5392d70e3b4
             /*{
                 path: 'asistencia-justificacion',
                 loadChildren: './asistencia-justificacion/asistencia-justificacion.module#AsistenciaJustificacionModule'

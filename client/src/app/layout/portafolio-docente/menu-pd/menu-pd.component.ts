@@ -5,14 +5,9 @@ import { PortafolioDocenteService } from '../portafolio-docente.service';
 import { Router } from '@angular/router';
 import { PeriodoLectivoActual } from '../../../entidades/especifico/Periodo-Lectivo-Actual';
 import { Persona } from '../../../entidades/CRUD/Persona';
-<<<<<<< HEAD
 import { CarrerasDocente } from '../../../entidades/especifico/Carreras-Docente';
 import { AsignaturasDocente } from '../../../entidades/especifico/Asignaturas-Docente';
 import { isNull } from 'util';
-=======
-import { Carrera } from '../../../entidades/CRUD/Carrera';
-import { Asignatura } from '../../../entidades/CRUD/Asignatura';
->>>>>>> 3491fab01e24f31352e930441b90a5392d70e3b4
 
 @Component({
     selector: 'app-menu-pd',
@@ -23,13 +18,8 @@ import { Asignatura } from '../../../entidades/CRUD/Asignatura';
 export class MenuPdComponent implements OnInit {
     busy: Promise<any>;
     variableEjemplo: string;
-<<<<<<< HEAD
     carrerasDocente: CarrerasDocente[];
     asignaturasDocente: AsignaturasDocente[];
-=======
-    carrerasDocente: Carrera[];
-    asignaturasDocente: Asignatura[];
->>>>>>> 3491fab01e24f31352e930441b90a5392d70e3b4
     carreraSeleccionada: number;
     asignaturaSeleccionada: number;
     periodoLectivo: PeriodoLectivoActual;
@@ -67,7 +57,6 @@ export class MenuPdComponent implements OnInit {
         this.busy = this.portafolioDocenteDataService.getCarrera(this.personaLogeada.id, this.periodoLectivo.id)
         .then(respuesta => {
             this.carrerasDocente = respuesta;
-<<<<<<< HEAD
             const carrera = JSON.parse(localStorage.getItem('carrera')) as CarrerasDocente;
             localStorage.removeItem('carrera');
             let i = 0;
@@ -81,9 +70,6 @@ export class MenuPdComponent implements OnInit {
                     i++;
                 });
             }
-=======
-            this.carreraSeleccionada = 0;
->>>>>>> 3491fab01e24f31352e930441b90a5392d70e3b4
             this.getAsignatura();
         })
         .catch(error => {
@@ -94,7 +80,6 @@ export class MenuPdComponent implements OnInit {
             this.periodoLectivo.id, this.carrerasDocente[this.carreraSeleccionada].id)
         .then(respuesta => {
             this.asignaturasDocente = respuesta;
-<<<<<<< HEAD
             const asignatura = JSON.parse(localStorage.getItem('asignatura')) as AsignaturasDocente;
             localStorage.removeItem('asignatura');
             let i = 0;
@@ -108,9 +93,6 @@ export class MenuPdComponent implements OnInit {
                     i++;
                 });
             }
-=======
-            this.asignaturaSeleccionada = 0;
->>>>>>> 3491fab01e24f31352e930441b90a5392d70e3b4
         })
         .catch(error => {
         });

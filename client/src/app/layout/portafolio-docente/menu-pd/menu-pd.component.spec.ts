@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SilaboComponent } from './silabo.component';
+import { MenuPdComponent } from './menu-pd.component';
 
 describe('SilaboComponent', () => {
-  let component: SilaboComponent;
-  let fixture: ComponentFixture<SilaboComponent>;
+  let component: MenuPdComponent;
+  let fixture: ComponentFixture<MenuPdComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SilaboComponent ]
+      declarations: [ MenuPdComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SilaboComponent);
+    fixture = TestBed.createComponent(MenuPdComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
