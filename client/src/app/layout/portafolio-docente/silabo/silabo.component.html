@@ -1,0 +1,262 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 text-right">
+        <h2 style="margin-top:0px">Sílabo de {{asignaturaSeleccionada.nombre}} </h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="btn-toolbar">
+            <div>
+            <button type="button" class="btn btn-default" (click)="getTotalHorasDia()">
+                <span class="fa fa-refresh"></span>&nbsp;Leer
+            </button>
+            <button type="button" class="btn btn-default" (click)="getTotalHorasDia()">
+                <span class="fa fa-refresh"></span>&nbsp;Reporte
+            </button>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="card-block">
+        <ngb-tabset>
+            <ngb-tab title="Información general">
+                <ng-template ngbTabContent>
+                    <ngb-accordion [closeOthers]="true" activeIds="static-1">
+                        <ngb-panel id="static-1" title="Asignatura">
+                            <ng-template ngbPanelContent>
+                                <div class="container-fluid">
+                                    <div class="row" style="margin-top:15px">
+                                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+                                            <label for="codigo">Codigo: </label>
+                                            <input type="text" id="codigo"  class="form-control" readonly="readonly" value="{{asignaturaSeleccionada.codigo}}">
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-5">
+                                            <label for="unidadOrganizacion">Unidad de organización: </label>
+                                            <input type="text" id="unidadOrganizacion"  class="form-control" readonly="readonly" value="{{asignaturaSeleccionada.unidadOrganizacion}}">
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-5">
+                                            <label for="campoFormacion">Campo de formación: </label>
+                                            <input type="text" id="campoFormacion"  class="form-control" readonly="readonly" value="{{asignaturaSeleccionada.campoFormacion}}">
+                                        </div>
+                                    </div>
+                                    <div class="row" style="margin-top:30px">
+                                        <div class="col-xs-12 col-sm-6 col-md-3 col-lg-2">
+                                            <label for="malla">Malla: </label>
+                                            <input type="text" id="malla"  class="form-control" readonly="readonly" value="{{asignaturaSeleccionada.malla}}">
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                                            <label for="modalidad">Modalidad: </label>
+                                            <input type="text" id="modalidad"  class="form-control" readonly="readonly" value="{{carreraSeleccionada.modalidad}}">
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                                            <label for="periodoAcademico">Periodo Académico: </label>
+                                            <input type="text" id="periodoAcademico"  class="form-control" readonly="readonly" value="{{asignaturaSeleccionada.periodoAcademicoDescripcion}}">
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6 col-md-3 col-lg-4">
+                                            <label for="periodoLectivo">Periodo lectivo: </label>
+                                            <input type="text" id="periodoLectivo"  class="form-control" readonly="readonly" value="{{periodoLectivo.descripcion}}">
+                                        </div>
+                                    </div>
+                                    <div class="row" style="margin-top:30px; margin-bottom:15px">
+                                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                            <label>Distribución de horas en las actividades de aprendizaje:</label>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6 col-md-3 col-lg-2">
+                                            <label for="horasDocencia">Docencia: </label>
+                                            <input type="text" id="horasDocencia"  class="form-control" readonly="readonly" value="{{asignaturaSeleccionada.horasDocente}}">
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6 col-md-3 col-lg-2">
+                                            <label for="horasAutonomas">Autónomas: </label>
+                                            <input type="text" id="horasAutonomas"  class="form-control" readonly="readonly" value="{{asignaturaSeleccionada.horasAutonomas}}">
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6 col-md-3 col-lg-2">
+                                            <label for="horasPracticas">Prácticas: </label>
+                                            <input type="text" id="periodoAcademico"  class="form-control" readonly="readonly" value="{{asignaturaSeleccionada.horasPractica}}">
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                                            <label for="totalHoras">Total: </label>
+                                            <input type="text" id="totalHoras"  class="form-control" readonly="readonly" value="{{totalHoras}}">
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                                            <label for="creditos">Créditos / peso: </label>
+                                            <input type="text" id="creditos"  class="form-control" readonly="readonly" value="{{asignaturaSeleccionada.credito}}">
+                                        </div>
+                                    </div>
+                                </div>
+                            </ng-template>
+                        </ngb-panel>
+                        <ngb-panel id="static-2" title="Pre-requisitos y co-requisitos">
+                            <ng-template ngbPanelContent>
+                                <div class="container-fluid">
+                                    <div class="row" style="margin-top:15px">
+                                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                            <label>Pre-requisitos</label>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                            <label>Co-requisitos</label>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6 col-md6 col-lg-6">
+                                            <table class="table table-striped table-bordered table-editable">
+                                                <thead class="thead-dark">
+                                                    <tr>
+                                                        <th scope="col">
+                                                            <span>
+                                                                <strong>No.</strong>
+                                                            </span>
+                                                        </th>
+                                                        <th scope="col">
+                                                            <span>
+                                                                <strong>Asignatura</strong>
+                                                            </span>
+                                                        </th>
+                                                        <th scope="col">
+                                                            <span>
+                                                                <strong>Código</strong>
+                                                            </span>
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr *ngFor="let preRequisito of preRequisitos let i = index">
+                                                        <td>{{i + 1}}</td>
+                                                        <td>{{preRequisito.nombre}}</td>
+                                                        <td>{{preRequisito.codigo}}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6 col-md6 col-lg-6">
+                                            <table class="table table-striped table-bordered table-editable">
+                                                <thead class="thead-dark">
+                                                    <tr>
+                                                        <th scope="col">
+                                                            <span>
+                                                                <strong>No.</strong>
+                                                            </span>
+                                                        </th>
+                                                        <th scope="col">
+                                                            <span>
+                                                                <strong>Asignatura</strong>
+                                                            </span>
+                                                        </th>
+                                                        <th scope="col">
+                                                            <span>
+                                                                <strong>Código</strong>
+                                                            </span>
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr *ngFor="let coRequisito of coRequisitos let i = index">
+                                                        <td>{{i + 1}}</td>
+                                                        <td>{{coRequisito.nombre}}</td>
+                                                        <td>{{coRequisito.codigo}}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ng-template>
+                        </ngb-panel>
+                        <ngb-panel id="static-3" title="Descripción">
+                            <ng-template ngbPanelContent>
+                                    <h4>hola</h4>
+                            </ng-template>
+                        </ngb-panel>
+                        <ngb-panel id="static-4" title="Objetivo">
+                            <ng-template ngbPanelContent>
+                                    <h4>hola</h4>
+                            </ng-template>
+                        </ngb-panel>
+                    </ngb-accordion>
+                </ng-template>
+            </ngb-tab>
+            <ngb-tab title="Resultados de aprendzaje">
+                <ng-template ngbTabContent>
+                        <ngb-accordion activeIds="static-0">
+                            <ngb-panel *ngFor='let proceso of procesos let i = index' id="static-{{i}}" title={{proceso}}>
+                                <ng-template ngbPanelContent>
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                                                <label><strong>Sub-procesos</strong></label>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                                                <label><strong>Resultados de aprendizaje</strong></label>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                                                <label><strong>evidencias</strong></label>
+                                            </div>
+                                        </div>
+                                        <div class="row" *ngFor='let elemento of elementos let j = index'>
+                                            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                                                <textarea class="form-control codeWriter" rows="5" id="proceso-{{j}}"></textarea>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+
+                                            </div>
+                                            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ng-template>
+                            </ngb-panel>
+                        </ngb-accordion>
+                </ng-template>
+            </ngb-tab>
+            <ngb-tab title="Contenidos">
+                <ng-template ngbTabContent>
+                    <h1>hola3</h1>
+                </ng-template>
+            </ngb-tab>
+            <ngb-tab title="Metodología">
+                <ng-template ngbTabContent>
+                    <h1>hola4</h1>
+                </ng-template>
+            </ngb-tab>
+            <ngb-tab title="Relación perfil egreso">
+                <ng-template ngbTabContent>
+                    <h1>hola5</h1>
+                </ng-template>
+            </ngb-tab>
+        </ngb-tabset>
+    </div>
+</div>
+    
+
+<ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title">
+            <strong>Sílabo nuevo de {{asignaturaSeleccionada.nombre}}</strong>
+        </h4>
+        <button type="button" class="close" aria-label="Close" (click)="d('ClickEnX')">
+        <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="container-fluid">
+            <label>Por favor seleccione el sílabo que desee utilizar como plantilla para su planificación, muchas gracias.</label>
+            <select id="asignaturaDocente" class="form-control" [(ngModel)]="periodoSeleccionado" >
+                <option value="99">En blanco</option>  
+                <option *ngFor='let periodo of periodos let j = index' value={{j}}>{{periodo.descripcion}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-primary col-offset-sm-4" (click)="c('aceptar')">
+            <span class="fa fa-check"></span>&nbsp;Aceptar
+        </button> 
+        <button type="button" class="btn btn-default" (click)="c('cancelar')">
+            <span class="fa fa-reply"></span>&nbsp;Volver
+        </button>
+    </div>
+</ng-template>
+
+
+
+

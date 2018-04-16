@@ -1,6 +1,6 @@
 export class GuardarAsistenciaEstudiante {
     id: number;
     idMatriculaAsignatura: number;
-    fecha: string;
+    fecha: Date;
     horas: number;
  }

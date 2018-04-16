@@ -35,6 +35,8 @@ const routes: Routes = [
             { path: 'rolsecundario', loadChildren: '../CRUD/rolsecundario/rolsecundario.module#RolSecundarioModule' },
             { path: 'logmailsender', loadChildren: '../CRUD/logmailsender/logmailsender.module#LogMailSenderModule' },
             { path: 'registro-asistencia', loadChildren: './asistencia-estudiante/registro-asistencia/registro-asistencia.module#RegistroAsistenciaModule' },
+            { path: 'menu-pd', loadChildren: './portafolio-docente/menu-pd/menu-pd.module#MenuPdModule' },
+            { path: 'silabo', loadChildren: './portafolio-docente/silabo/silabo.module#SilaboModule' },
             /*{
                 path: 'asistencia-justificacion',
                 loadChildren: './asistencia-justificacion/asistencia-justificacion.module#AsistenciaJustificacionModule'

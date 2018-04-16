@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 text-right">
+      <h2 style="margin-top:0px">Portafolio Docente</h2>
+    </div>
+  </div>
+  <div class="row" style="margin-top:15px">
+    <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
+      <label for="carrera">Carrera:</label>
+    </div>
+    <div class="col-xs-12 col-sm-9 col-md-7 col-lg-7">
+      <select id="carrera" class="form-control" [(ngModel)]="carreraSeleccionada" (change)="getAsignatura()">
+        <option *ngFor='let carrera of carrerasDocente let j = index' value={{j}}>{{carrera.nombre}}</option>
+      </select>
+    </div>
+  </div>
+  <div class="row justify-content-md-center" style="margin-top:45px">
+    <div class="col-6 col-sm-3 col-md-2 col-lg-2 col-xl-2 text-center">
+      <input type=image src='./../../../../assets/images/portafolio-docente/caratula.png' (click)="prueba()">
+      <label class="texto-icono">Carátula</label>
+    </div>
+    <div class="col-6 col-sm-4 col-md-4 col-lg-2 col-xl-2 text-center">
+      <input type=image src='./../../../../assets/images/portafolio-docente/planrecuperacion.png' (click)="prueba()">
+      <label class="texto-icono">Plan Recuperación</label>
+    </div> 
+    <div class="col-6 col-sm-4 col-md-4 col-lg-2 col-xl-2 text-center">
+      <input type=image src='./../../../../assets/images/portafolio-docente/informerecuperacion.png' (click)="prueba()">
+      <label class="texto-icono">Informe Recuperación</label>
+    </div>  
+    <div class="col-6 col-sm-4 col-md-4 col-lg-2 col-xl-2 text-center">
+      <input type=image src='./../../../../assets/images/portafolio-docente/informerendimiento.png' (click)="prueba()">
+      <label class="texto-icono">Informe Rendimiento</label>
+    </div>
+  </div>
+  <div class="row" style="margin-top:45px">
+    <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
+      <label for="Asignatura">Asignatura:</label>
+    </div>
+    <div class="col-xs-12 col-sm-9 col-md-7 col-lg-7">
+      <select id="asignatura" class="form-control" [(ngModel)]="asignaturaSeleccionada">
+        <option *ngFor='let asignatura of asignaturasDocente let k = index' value={{k}}>{{asignatura.nombre}}</option>
+      </select>
+    </div>
+  </div>
+  <div class="row justify-content-md-center" style="margin-top:45px">
+    <div class="col-6 col-sm-3 col-md-2 col-lg-2 col-xl-2 text-center">
+      <input type=image src='./../../../../assets/images/portafolio-docente/silabo.png' (click)="silabo()">
+      <label class="texto-icono">Sílabo</label>
+    </div> 
+    <div class="col-6 col-sm-3 col-md-2 col-lg-2 col-xl-2 text-center">
+      <input type=image src='./../../../../assets/images/portafolio-docente/planclase.png' (click)="prueba()">
+      <label class="texto-icono">Plan de Clase</label>
+    </div>
+    <div class="col-6 col-sm-3 col-md-2 col-lg-2 col-xl-2 text-center">
+      <input type=image src='./../../../../assets/images/portafolio-docente/temastratados.png' (click)="prueba()">
+      <label class="texto-icono">Temas Tratados</label>
+    </div>
+  </div>
+</div>
