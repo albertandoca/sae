@@ -1,7 +1,7 @@
 export class SilaboResultados {
    id: number;
    idSilaboElementos: number;
-   IdVerboBloom: number;
+   verbo: string;
    objeto: string;
    condicion: string;
    finalidad: string;

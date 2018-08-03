@@ -8,5 +8,5 @@ export class Silabo {
    objetivoParte3: string;
    objetivoParte4: string;
    codigo: string;
-   idEstadoComponentePortafolioDocente: number;
+   idPortafolioDocenteResumen: number;
 }

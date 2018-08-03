@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewContainerRef } from '@angular/core';
 import { ToastsManager } from 'ng2-toastr/ng2-toastr';
-import { SilaboBiliografia } from '../../entidades/CRUD/SilaboBiliografia';
-import { SilaboBiliografiaService } from './silabobiliografia.service';
+import { SilaboBibliografia } from '../../entidades/CRUD/SilaboBibliografia';
+import { SilaboBibliografiaService } from './silabobibliografia.service';
 
 import 'rxjs/add/operator/toPromise';
 import { ModalComponent } from 'app/layout/bs-component/components';
@@ -9,16 +9,16 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 
 @Component({
-   selector: 'app-silabobiliografia',
-   templateUrl: './silabobiliografia.component.html',
-   styleUrls: ['./silabobiliografia.component.scss']
+   selector: 'app-silabobibliografia',
+   templateUrl: './silaboBibliografia.component.html',
+   styleUrls: ['./silaboBibliografia.component.scss']
 })
 
-export class SilaboBiliografiaComponent implements OnInit {
+export class SilaboBibliografiaComponent implements OnInit {
 
    busy: Promise<any>;
-   entidades: SilaboBiliografia[];
-   entidadSeleccionada: SilaboBiliografia;
+   entidades: SilaboBibliografia[];
+   entidadSeleccionada: SilaboBibliografia;
    pagina: 1;
    tamanoPagina: 20;
    paginaActual: number;
@@ -26,7 +26,7 @@ export class SilaboBiliografiaComponent implements OnInit {
    registrosPorPagina: number;
    esVisibleVentanaEdicion: boolean;
 
-   constructor(public toastr: ToastsManager, vcr: ViewContainerRef, private dataService: SilaboBiliografiaService, private modalService: NgbModal) {
+   constructor(public toastr: ToastsManager, vcr: ViewContainerRef, private dataService: SilaboBibliografiaService, private modalService: NgbModal) {
       this.toastr.setRootViewContainerRef(vcr);
    }
 
@@ -112,7 +112,7 @@ export class SilaboBiliografiaComponent implements OnInit {
       });
    }
 
-   isValid(entidadPorEvaluar: SilaboBiliografia): boolean {
+   isValid(entidadPorEvaluar: SilaboBibliografia): boolean {
       return true;
    }
 
@@ -126,13 +126,13 @@ export class SilaboBiliografiaComponent implements OnInit {
       this.cerrarVentanaEdicion();
    }
 
-   crearEntidad(): SilaboBiliografia {
-      const nuevoSilaboBiliografia = new SilaboBiliografia();
-      nuevoSilaboBiliografia.id = 0;
-      return nuevoSilaboBiliografia;
+   crearEntidad(): SilaboBibliografia {
+      const nuevoSilaboBibliografia = new SilaboBibliografia();
+      nuevoSilaboBibliografia.id = 0;
+      return nuevoSilaboBibliografia;
    }
 
-   add(entidadNueva: SilaboBiliografia): void {
+   add(entidadNueva: SilaboBibliografia): void {
       this.busy = this.dataService.create(entidadNueva)
       .then(respuesta => {
          if(respuesta){
@@ -147,7 +147,7 @@ export class SilaboBiliografiaComponent implements OnInit {
       });
    }
 
-   update(entidadParaActualizar: SilaboBiliografia): void {
+   update(entidadParaActualizar: SilaboBibliografia): void {
       this.busy = this.dataService.update(entidadParaActualizar)
       .then(respuesta => {
          if(respuesta){
@@ -162,7 +162,7 @@ export class SilaboBiliografiaComponent implements OnInit {
       });
    }
 
-   delete(entidadParaBorrar: SilaboBiliografia): void {
+   delete(entidadParaBorrar: SilaboBibliografia): void {
       this.busy = this.dataService.remove(entidadParaBorrar.id)
       .then(respuesta => {
          if(respuesta){
@@ -180,7 +180,7 @@ export class SilaboBiliografiaComponent implements OnInit {
    refresh(): void {
       this.getNumeroPaginas(this.registrosPorPagina);
       this.getPagina(this.paginaActual,this.registrosPorPagina);
-      this.entidades = SilaboBiliografia[0];
+      this.entidades = SilaboBibliografia[0];
       this.entidadSeleccionada = this.crearEntidad();
    }
 
@@ -214,7 +214,7 @@ export class SilaboBiliografiaComponent implements OnInit {
       this.refresh();
    }
 
-   onSelect(entidadActual: SilaboBiliografia): void {
+   onSelect(entidadActual: SilaboBibliografia): void {
       this.entidadSeleccionada = entidadActual;
    }
 }

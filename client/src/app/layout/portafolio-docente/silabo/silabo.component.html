@@ -1,28 +1,29 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12 text-right">
-        <h2 style="margin-top:0px">Sílabo de {{asignaturaSeleccionada.nombre}} </h2>
+            <h2 style="margin-top:0px">Sílabo de {{asignaturaSeleccionada.nombre}} </h2>
         </div>
     </div>
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <div class="btn-toolbar">
-            <div>
-            <button type="button" class="btn btn-default" (click)="getTotalHorasDia()">
-                <span class="fa fa-refresh"></span>&nbsp;Leer
-            </button>
-            <button type="button" class="btn btn-default" (click)="getTotalHorasDia()">
-                <span class="fa fa-refresh"></span>&nbsp;Reporte
-            </button>
+            <div class="btn-toolbar">
+                <div>
+                    <button type="button" class="btn btn-default" (click)="getTotalHorasDia()">
+                        <span class="fa fa-refresh"></span>&nbsp;Leer
+                    </button>
+                    <button type="button" class="btn btn-default" (click)="getTotalHorasDia()">
+                        <span class="fa fa-refresh"></span>&nbsp;Reporte
+                    </button>
+                </div>
             </div>
-        </div>
         </div>
     </div>
 </div>
+
 <div class="container">
     <div class="card-block">
         <ngb-tabset>
-            <ngb-tab title="Información general">
+            <ngb-tab id="tab1" title="Información general">
                 <ng-template ngbTabContent>
                     <ngb-accordion [closeOthers]="true" activeIds="static-1">
                         <ngb-panel id="static-1" title="Asignatura">
@@ -31,33 +32,33 @@
                                     <div class="row" style="margin-top:15px">
                                         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
                                             <label for="codigo">Codigo: </label>
-                                            <input type="text" id="codigo"  class="form-control" readonly="readonly" value="{{asignaturaSeleccionada.codigo}}">
+                                            <input type="text" id="codigo" class="form-control" readonly="readonly" value="{{asignaturaSeleccionada.codigo}}">
                                         </div>
                                         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-5">
                                             <label for="unidadOrganizacion">Unidad de organización: </label>
-                                            <input type="text" id="unidadOrganizacion"  class="form-control" readonly="readonly" value="{{asignaturaSeleccionada.unidadOrganizacion}}">
+                                            <input type="text" id="unidadOrganizacion" class="form-control" readonly="readonly" value="{{asignaturaSeleccionada.unidadOrganizacion}}">
                                         </div>
                                         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-5">
                                             <label for="campoFormacion">Campo de formación: </label>
-                                            <input type="text" id="campoFormacion"  class="form-control" readonly="readonly" value="{{asignaturaSeleccionada.campoFormacion}}">
+                                            <input type="text" id="campoFormacion" class="form-control" readonly="readonly" value="{{asignaturaSeleccionada.campoFormacion}}">
                                         </div>
                                     </div>
                                     <div class="row" style="margin-top:30px">
                                         <div class="col-xs-12 col-sm-6 col-md-3 col-lg-2">
                                             <label for="malla">Malla: </label>
-                                            <input type="text" id="malla"  class="form-control" readonly="readonly" value="{{asignaturaSeleccionada.malla}}">
+                                            <input type="text" id="malla" class="form-control" readonly="readonly" value="{{asignaturaSeleccionada.malla}}">
                                         </div>
                                         <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
                                             <label for="modalidad">Modalidad: </label>
-                                            <input type="text" id="modalidad"  class="form-control" readonly="readonly" value="{{carreraSeleccionada.modalidad}}">
+                                            <input type="text" id="modalidad" class="form-control" readonly="readonly" value="{{carreraSeleccionada.modalidad}}">
                                         </div>
                                         <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
                                             <label for="periodoAcademico">Periodo Académico: </label>
-                                            <input type="text" id="periodoAcademico"  class="form-control" readonly="readonly" value="{{asignaturaSeleccionada.periodoAcademicoDescripcion}}">
+                                            <input type="text" id="periodoAcademico" class="form-control" readonly="readonly" value="{{asignaturaSeleccionada.periodoAcademicoDescripcion}}">
                                         </div>
                                         <div class="col-xs-12 col-sm-6 col-md-3 col-lg-4">
                                             <label for="periodoLectivo">Periodo lectivo: </label>
-                                            <input type="text" id="periodoLectivo"  class="form-control" readonly="readonly" value="{{periodoLectivo.descripcion}}">
+                                            <input type="text" id="periodoLectivo" class="form-control" readonly="readonly" value="{{periodoLectivo.descripcion}}">
                                         </div>
                                     </div>
                                     <div class="row" style="margin-top:30px; margin-bottom:15px">
@@ -66,23 +67,23 @@
                                         </div>
                                         <div class="col-xs-12 col-sm-6 col-md-3 col-lg-2">
                                             <label for="horasDocencia">Docencia: </label>
-                                            <input type="text" id="horasDocencia"  class="form-control" readonly="readonly" value="{{asignaturaSeleccionada.horasDocente}}">
+                                            <input type="text" id="horasDocencia" class="form-control" readonly="readonly" value="{{asignaturaSeleccionada.horasDocente}}">
                                         </div>
                                         <div class="col-xs-12 col-sm-6 col-md-3 col-lg-2">
                                             <label for="horasAutonomas">Autónomas: </label>
-                                            <input type="text" id="horasAutonomas"  class="form-control" readonly="readonly" value="{{asignaturaSeleccionada.horasAutonomas}}">
+                                            <input type="text" id="horasAutonomas" class="form-control" readonly="readonly" value="{{asignaturaSeleccionada.horasAutonomas}}">
                                         </div>
                                         <div class="col-xs-12 col-sm-6 col-md-3 col-lg-2">
                                             <label for="horasPracticas">Prácticas: </label>
-                                            <input type="text" id="periodoAcademico"  class="form-control" readonly="readonly" value="{{asignaturaSeleccionada.horasPractica}}">
+                                            <input type="text" id="periodoAcademico" class="form-control" readonly="readonly" value="{{asignaturaSeleccionada.horasPractica}}">
                                         </div>
                                         <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
                                             <label for="totalHoras">Total: </label>
-                                            <input type="text" id="totalHoras"  class="form-control" readonly="readonly" value="{{totalHoras}}">
+                                            <input type="text" id="totalHoras" class="form-control" readonly="readonly" value="{{totalHoras}}">
                                         </div>
                                         <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
                                             <label for="creditos">Créditos / peso: </label>
-                                            <input type="text" id="creditos"  class="form-control" readonly="readonly" value="{{asignaturaSeleccionada.credito}}">
+                                            <input type="text" id="creditos" class="form-control" readonly="readonly" value="{{asignaturaSeleccionada.credito}}">
                                         </div>
                                     </div>
                                 </div>
@@ -162,64 +163,216 @@
                                 </div>
                             </ng-template>
                         </ngb-panel>
-                        <ngb-panel id="static-3" title="Descripción">
+                        <ngb-panel id="static-3" title="Descripción amplia de la asignatura">
                             <ng-template ngbPanelContent>
-                                    <h4>hola</h4>
+                                <div class="container-fluid">
+                                    <div class="row" style="margin-top:15px">
+                                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                            <label>
+                                                Escriba una breve síntesis del desarrollo de las actividades, temas a tratar y tópicos escenciales en la asignatura, debe
+                                                incluir la importancia que tiene la asignatura en el perfil profesional.
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="row" style="margin-top:15px">
+                                        <div class="col-xs-11 col-sm-11 col-md-11 col-lg-11">
+                                            <textarea class="form-control" id="textoDescripcion" rows="5" [(ngModel)]="silabo[0].descripcion" [readonly]="descripcionTexto">{{silabo[0].descripcion}}</textarea>
+                                        </div>
+                                        <div class="row justify-content-md-center align-items-center">
+                                            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 ">
+                                                <input type="image" src="../../../../assets/images/portafolio-docente/lapiz.png" placement="left" ngbTooltip="Modificar"
+                                                    (click)="descripcion('Modifica')" *ngIf="descripcionIcono">
+                                                <input type="image" src="../../../../assets/images/portafolio-docente/exito.png" placement="left" ngbTooltip="Aceptar" (click)="descripcion('Aceptar')"
+                                                *ngIf="descripcionIcono === false">
+                                                <input type="image" src="../../../../assets/images/portafolio-docente/error.png" placement="left" ngbTooltip="Cancelar" (click)="descripcion('Cancela')"
+                                                    *ngIf="descripcionIcono === false">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row" style="margin-bottom:15px">
+                                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                            <span class="ejemplo">
+                                                Ejemplo de la asignatura Bases de Datos: Las bases de datos se diseñan para almacenar y gestionar grandes cantidades de información,
+                                                la gestión de datos implica la definición de estructuras y mecanismos para
+                                                su manipulación, proporcionar seguridad en la información almacenada, evitar
+                                                posibles fallas o resultados erróneos, caídas del sistema y el acceso de
+                                                personas no autorizadas entre otras. Está asigatura es teórica en un 30%,
+                                                proporcionando los elementos más importantes para el desarrolo de las prácticas,
+                                                el análisi de ejemplos reales y la implementación de aplicaciones que utilicen
+                                                bases de datos son las caracteristicas de las actividades prácticas desarrolladas
+                                                dentro y fuera del aula.
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
                             </ng-template>
                         </ngb-panel>
                         <ngb-panel id="static-4" title="Objetivo">
                             <ng-template ngbPanelContent>
-                                    <h4>hola</h4>
-                            </ng-template>
-                        </ngb-panel>
-                    </ngb-accordion>
-                </ng-template>
-            </ngb-tab>
-            <ngb-tab title="Resultados de aprendzaje">
-                <ng-template ngbTabContent>
-                        <ngb-accordion activeIds="static-0">
-                            <ngb-panel *ngFor='let proceso of procesos let i = index' id="static-{{i}}" title={{proceso}}>
-                                <ng-template ngbPanelContent>
-                                    <div class="container-fluid">
-                                        <div class="row">
-                                            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                                                <label><strong>Sub-procesos</strong></label>
-                                            </div>
-                                            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                                                <label><strong>Resultados de aprendizaje</strong></label>
-                                            </div>
-                                            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                                                <label><strong>evidencias</strong></label>
-                                            </div>
+                                <div class="container-fluid">
+                                    <div class="row" style="margin-top:15px">
+                                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                            <label>
+                                                El objetivo de la asignatura lo redactamos tomando como base el proceso de enseñanza aprendizaje, se lo plantea respondiendo
+                                                a las siguientes preguntas: ¿Por qué y para qué es IMPORTANTE lo que se va
+                                                a enseñar? y ¿Cómo se lo va a hacer?.
+                                            </label>
                                         </div>
-                                        <div class="row" *ngFor='let elemento of elementos let j = index'>
-                                            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                                                <textarea class="form-control codeWriter" rows="5" id="proceso-{{j}}"></textarea>
-                                            </div>
-                                            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-
-                                            </div>
-                                            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-
+                                    </div>
+                                    <div class="row" style="margin-top:15px">
+                                        <div class="col-xs-11 col-sm-11 col-md-11 col-lg-11">
+                                            <textarea class="form-control" rows="3" readonly="readonly">{{objetivoAsignatura}}</textarea>
+                                        </div>
+                                        <div class="row justify-content-md-center align-items-center">
+                                            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                                                <input type="image" src="../../../../assets/images/portafolio-docente/lapiz.png" placement="left" ngbTooltip="Modificar"
+                                                    (click)="openObjetivo(objetivo)">
                                             </div>
                                         </div>
                                     </div>
-                                </ng-template>
-                            </ngb-panel>
-                        </ngb-accordion>
+                                    <div class="row" style="margin-bottom:15px">
+                                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                            <span class="ejemplo">
+                                                Ejemplo: Utilizar los componentes fundamentales de los sistemas administradores de bases de datos, para la implementación
+                                                de aplicaciones que gestionen información desde bases de datos locales o
+                                                remotas, a través del estudio de sus elementos físicos y lógicos, lenguajes
+                                                de programación e interfaces con otros sistemas de comunicaciones como el
+                                                internet.
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ng-template>
+                        </ngb-panel>
+                    </ngb-accordion>
+                    <div class="row" style="margin-top:10px; margin-bottom:10px; margin-left:30px">
+                        <button type="button" class="btn btn-outline-primary col-offset-sm-4" *ngIf="idPortafolio == 0" (click)="guardaInformacionGeneral()">
+                            <span class="fa fa-bookmark"></span>&nbsp;Guardar información general
+                        </button>
+                        <button type="button" class="btn btn-outline-info col-offset-sm-4" *ngIf="modificaInformacionGeneral" (click)="modificarInformacionGeneral()">
+                            <span class="fa fa-bookmark"></span>&nbsp;Modificar información general
+                        </button>
+                    </div>
                 </ng-template>
             </ngb-tab>
-            <ngb-tab title="Contenidos">
+            <ngb-tab id="tab2" title="Resultados de aprendzaje" [disabled]="tab < 2">
+                <ng-template ngbTabContent>
+                    <ngb-accordion activeIds="static-0">
+                        <ngb-panel id="static-{{i}}" *ngFor='let unidades of silaboUnidades let i = index'>
+                            <ng-template ngbPanelTitle>
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-xs-9 col-sm-9 col-md-10 col-lg-10">
+                                            <span>Unidad {{unidades.codigo}}: {{unidades.descripcion}}</span>
+                                        </div>
+                                        <div class="col-xs-3 col-sm-3 col-md-2 col-lg-2 text-right">
+                                            <input type="image" src="../../../../assets/images/portafolio-docente/lapiz24.png" placement="top" ngbTooltip="Modificar"
+                                                (click)="openUnidad(ventanaUnidad, 2, i)">
+                                            <input type="image" src="../../../../assets/images/portafolio-docente/basura24.png" placement="top" ngbTooltip="Eliminar"
+                                                (click)="openUnidad(ventanaUnidad, 3, i)">
+                                        </div>
+                                    </div>
+                                </div>
+                            </ng-template>
+                            <ng-template ngbPanelContent>
+                                <div class="container-fluid">
+                                    <div class="row" style="margin-top:5px; margin-bottom:5px">
+                                        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                                            <div class="row">
+                                                <div class="col-xs-2 col-sm-2 col-md-1 col-lg-1">
+                                                    <input type="image" src="../../../../assets/images/portafolio-docente/anadir16.png" placement="top" ngbTooltip="Nuevo elemento"
+                                                    (click)="openElemento(ventanaElemento, 1, i)">
+                                                </div>
+                                                <div class="col-xs-10 col-sm-10 col-md-11 col-lg-11">
+                                                    <strong>Elementos</strong>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                                            <div class="row">
+                                                <div class="col-xs-2 col-sm-2 col-md-1 col-lg-1">
+                                                    <input type="image" src="../../../../assets/images/portafolio-docente/anadir16.png" placement="top" ngbTooltip="Nuevo elemento"
+                                                    (click)="openResultado(ventanaResultado, 1, i)">
+                                                </div>
+                                                <div class="col-xs-9 col-sm-9 col-md-10 col-lg-10">
+                                                    <strong>Resultados de aprendizaje</strong>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                                            <div class="row">
+                                                <div class="col-xs-2 col-sm-2 col-md-1 col-lg-1">
+                                                    <input type="image" src="../../../../assets/images/portafolio-docente/anadir16.png" placement="top" ngbTooltip="Nuevo elemento"
+                                                        (click)="openEvidencias(ventanaEvidencias, 1, 0)">
+                                                </div>
+                                                <div class="col-xs-10 col-sm-10 col-md-11 col-lg-11">
+                                                    <strong>Evidencias</strong>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row" *ngFor='let elementos of silaboElementos let j = index'>
+                                        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                                            <div class="row" *ngIf='unidades.id === elementos.idSilaboUnidades'>
+                                                <div class="col-xs-10 col-sm-10 col-md-11 col-lg-11">
+                                                    <p>{{i+1}}.{{elementos.codigo}}.- {{elementos.verbo}} {{elementos.objeto}} {{elementos.condicion}} {{elementos.finalidad}}</p>
+                                                </div>
+                                                <div class="col-xs-2 col-sm-2 col-md-1 col-lg-1">
+                                                    <input type="image" src="../../../../assets/images/portafolio-docente/lapiz16.png" placement="top" ngbTooltip="Editar" (click)="openElemento(ventanaElemento, 2, j)">
+                                                    <input type="image" src="../../../../assets/images/portafolio-docente/basura16.png" placement="top" ngbTooltip="Eliminar" (click)="openElemento(ventanaElemento, 3, j)">
+                                                </div>
+                                            </div> 
+                                        </div>
+                                        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                                            <div *ngFor='let resultados of silaboResultados let k = index'>
+                                                <div class="row" *ngIf='unidades.id === elementos.idSilaboUnidades && elementos.id === resultados.idSilaboElementos'>
+                                                    <div class="col-xs-10 col-sm-10 col-md-11 col-lg-11">
+                                                        <p>{{i+1}}.{{j+1}}.{{resultados.codigo}}.- {{resultados.verbo}} {{resultados.objeto}} {{resultados.condicion}} {{resultados.finalidad}}</p>
+                                                    </div>
+                                                    <div class="col-xs-2 col-sm-2 col-md-1 col-lg-1">
+                                                        <input type="image" src="../../../../assets/images/portafolio-docente/lapiz16.png" placement="top" ngbTooltip="Editar" (click)="openResultado(ventanaResultado, 2, k)">
+                                                        <input type="image" src="../../../../assets/images/portafolio-docente/basura16.png" placement="top" ngbTooltip="Eliminar" (click)="openResultado(ventanaResultado, 3, k)">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                                            <div *ngFor='let evidencias of silaboEvidencias'>
+                                                <div class="row" *ngIf='unidades.id === elementos.idSilaboUnidades && elementos.id === evidencias.idSilaboResultados'>
+                                                    <div class="col-xs-10 col-sm-10 col-md-11 col-lg-11">
+                                                        <p>{{evidencias.codigo}}.- {{evidencias.descripcion}}</p>
+                                                    </div>
+                                                    <div class="col-xs-2 col-sm-2 col-md-1 col-lg-1">
+                                                        <input type="image" src="../../../../assets/images/portafolio-docente/lapiz16.png" placement="top" ngbTooltip="Editar" (click)="prueba(j)">
+                                                        <input type="image" src="../../../../assets/images/portafolio-docente/basura16.png" placement="top" ngbTooltip="Eliminar"
+                                                            (click)="prueba(j)">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ng-template>
+                        </ngb-panel>
+                    </ngb-accordion>
+                    <div class="row" style="margin-top:10px; margin-bottom:10px; margin-left:40px">
+                        <button type="button" class="btn btn-outline-primary col-offset-sm-4" (click)="openUnidad(ventanaUnidad, 1, 0)">
+                            <span class="fa fa-plus-circle"></span>&nbsp;Unidad
+                        </button>
+                    </div>
+                </ng-template>
+            </ngb-tab>
+            <ngb-tab id="tab3" title="Contenidos" [disabled]="tab < 3">
                 <ng-template ngbTabContent>
                     <h1>hola3</h1>
                 </ng-template>
             </ngb-tab>
-            <ngb-tab title="Metodología">
+            <ngb-tab id="tab4" title="Metodología" [disabled]="tab < 4">
                 <ng-template ngbTabContent>
                     <h1>hola4</h1>
                 </ng-template>
             </ngb-tab>
-            <ngb-tab title="Relación perfil egreso">
+            <ngb-tab id="tab5" title="Relación perfil egreso" [disabled]="tab < 5">
                 <ng-template ngbTabContent>
                     <h1>hola5</h1>
                 </ng-template>
@@ -227,7 +380,7 @@
         </ngb-tabset>
     </div>
 </div>
-    
+
 
 <ng-template #content let-c="close" let-d="dismiss">
     <div class="modal-header">
@@ -235,14 +388,14 @@
             <strong>Sílabo nuevo de {{asignaturaSeleccionada.nombre}}</strong>
         </h4>
         <button type="button" class="close" aria-label="Close" (click)="d('ClickEnX')">
-        <span aria-hidden="true">&times;</span>
+            <span aria-hidden="true">&times;</span>
         </button>
     </div>
     <div class="modal-body">
         <div class="container-fluid">
             <label>Por favor seleccione el sílabo que desee utilizar como plantilla para su planificación, muchas gracias.</label>
-            <select id="asignaturaDocente" class="form-control" [(ngModel)]="periodoSeleccionado" >
-                <option value="99">En blanco</option>  
+            <select id="asignaturaDocente" class="form-control" [(ngModel)]="periodoSeleccionado">
+                <option value=99>En blanco</option>
                 <option *ngFor='let periodo of periodos let j = index' value={{j}}>{{periodo.descripcion}}</option>
             </select>
         </div>
@@ -250,13 +403,277 @@
     <div class="modal-footer">
         <button type="button" class="btn btn-primary col-offset-sm-4" (click)="c('aceptar')">
             <span class="fa fa-check"></span>&nbsp;Aceptar
-        </button> 
-        <button type="button" class="btn btn-default" (click)="c('cancelar')">
+        </button>
+        <button type="button" class="btn btn-default" (click)="c('volver')">
             <span class="fa fa-reply"></span>&nbsp;Volver
         </button>
     </div>
 </ng-template>
 
+<ng-template #objetivo let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title">
+            <strong>Objetivo de la asignatura</strong>
+        </h4>
+        <button type="button" class="close" aria-label="Close" (click)="d('ClickEnX')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="container">
+            <div class="row" style="margin-top:10px">
+                <label>Por favor divida su objetivo en: VERBO en infinitivo, ¿QUÉ?, ¿PARA QUÉ? y ¿CÓMO?.</label>
+            </div>
+            <div class="row" style="margin-top:10px">
+                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                    <label for="verbo">Verbo:</label>
+                </div>
+                <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
+                    <input type="text" id="verbo" class="form-control" value="{{silabo[0].objetivoParte1}}" [(ngModel)]="silabo[0].objetivoParte1">
+                    <span class="ejemplo">Ejemplo: Utilizar</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                    <label for="que">¿Qué?:</label>
+                </div>
+                <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
+                    <textarea class="form-control" [(ngModel)]="silabo[0].objetivoParte2">{{silabo[0].objetivoParte2}}</textarea>
+                    <span class="ejemplo">Ejemplo: los componentes fundamentales de los sistemas administradores de bases de datos</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                    <label for="que">¿Para qué?:</label>
+                </div>
+                <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
+                    <textarea class="form-control" [(ngModel)]="silabo[0].objetivoParte3">{{silabo[0].objetivoParte3}}</textarea>
+                    <span class="ejemplo">Ejemplo: para la implementación de aplicaciones que gestionen información desde bases de datos locales o
+                    remotas</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                    <label for="que">¿Cómo?:</label>
+                </div>
+                <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
+                    <textarea class="form-control" [(ngModel)]="silabo[0].objetivoParte4">{{silabo[0].objetivoParte4}}</textarea>
+                    <span class="ejemplo">Ejemplo: a través del estudio de sus elementos físicos y lógicos, lenguajes de programación e interfaces
+                    con otros sistemas de comunicaciones como el internet</span>
+                </div>
+            </div>
+            <div class="row" style="margin-bottom:10px">
+                <label for="que">Objetivo redactado:</label>
+                <textarea id="objetivoGeneral" class="form-control" disabled="disabled">{{silabo[0].objetivoParte1}} {{silabo[0].objetivoParte2}}, {{silabo[0].objetivoParte3}}, {{silabo[0].objetivoParte4}}.</textarea>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-primary col-offset-sm-4" (click)="verObjetivo()">
+            <span class="fa fa-check"></span>&nbsp;Aceptar
+        </button>
+        <button type="button" class="btn btn-default" (click)="c('cancelar')">
+            <span class="fa fa-times"></span>&nbsp;Cancelar
+        </button>
+    </div>
+</ng-template>
 
+<ng-template #ventanaUnidad let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title">
+            <span *ngIf="modalUnidad == 1">
+                <strong>Unidad nueva</strong>
+            </span>
+            <span *ngIf="modalUnidad == 2">
+                <strong>Modificar unidad </strong>
+            </span>
+            <span *ngIf="modalUnidad == 3">
+                <strong>Eliminar unidad</strong>
+            </span>       
+        </h4>
+        <button type="button" class="close" aria-label="Close" (click)="d('ClickEnX')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="container" *ngIf="modalUnidad == 1 || modalUnidad == 2">
+            <div class="row" style="margin-top:15px; margin-bottom:15px">
+                <label>Unidad:</label>
+                <textarea class="form-control" [(ngModel)]="textoUnidad">{{textoUnidad}}</textarea>
+            </div>
+        </div>
+        <div class="container" *ngIf="modalUnidad == 3">
+            <div class="row" style="margin-top:15px; margin-bottom:15px">
+                <label>Esta seguro de eliminar la unidad</label>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-primary col-offset-sm-4" *ngIf="modalUnidad == 1" (click)="c('aceptarUnidad')">
+            <span class="fa fa-check"></span>&nbsp;Aceptar
+        </button>
+        <button type="button" class="btn btn-primary col-offset-sm-4" *ngIf="modalUnidad == 2" (click)="c('modificarUnidad')">
+            <span class="fa fa-check"></span>&nbsp;Modificar
+        </button>
+        <button type="button" class="btn btn-primary col-offset-sm-4" *ngIf="modalUnidad == 3" (click)="c('eliminarUnidad')">
+            <span class="fa fa-check"></span>&nbsp;Eliminar
+        </button>
+        <button type="button" class="btn btn-default" (click)="c('volver')">
+            <span class="fa fa-reply"></span>&nbsp;Volver
+        </button>
+    </div>
+</ng-template>
 
+<ng-template #ventanaElemento let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title">
+            <span *ngIf="modalUnidad == 1">
+                <strong>Elemento nuevo</strong>
+            </span>
+            <span *ngIf="modalUnidad == 2">
+                <strong>Modificar elemento </strong>
+            </span>
+            <span *ngIf="modalUnidad == 3">
+                <strong>Eliminar elemento</strong>
+            </span>       
+        </h4>
+        <button type="button" class="close" aria-label="Close" (click)="d('ClickEnX')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="container" *ngIf="modalUnidad == 1 || modalUnidad == 2">
+            <div class="row" style="margin-top:15px; margin-bottom:15px">
+                <label>Categoria verbo taxonomia de Bloom:</label>
+                <select id="categoriaVerbo" class="form-control" [(ngModel)]="categoriaVerboSeleccionado" (change)="verVerboBloom('idPadre', categoriaVerboSeleccionado)">
+                    <option value="9999">Seleccione ...</option>
+                    <option *ngFor='let categoria of verboBloomCategoria let j = index' value={{categoria.id}}>{{categoria.descripcion}}</option>
+                </select>
+                <label>Verbo:</label>
+                <select id="verbo" class="form-control" [(ngModel)]="verboSeleccionado" (change)="escribeVerboBloom(verboSeleccionado)">
+                    <option value="9999">Seleccione ...</option>
+                    <option *ngFor='let verbo of verboBloomVerbo let j = index' value={{j}}>{{verbo.descripcion}}</option>
+                </select>
+                <label>Verbo seleccionado:</label>
+                <input type="text" class="form-control" value={{textoVerbo}} disabled="disabled">
+            </div>
+            <div class="row">
+                <label>Objeto:</label>
+                <textarea class="form-control" [(ngModel)]="textoObjeto">{{textoObjeto}}</textarea>
+            </div>
+            <div class="row">
+                <label>Condición:</label>
+                <textarea class="form-control" [(ngModel)]="textoCondicion">{{textoCondicion}}</textarea>
+            </div>
+            <div class="row">
+                <label>Finalidad:</label>
+                <textarea class="form-control" [(ngModel)]="textoFinalidad">{{textoFinalidad}}</textarea>
+            </div>
+            <div class="row" style="margin-bottom:10px">
+                <button type="button" class="btn btn-outline-primary col-offset-sm-4" (click)="verElemento()">
+                    <span class="fa fa-bookmark"></span>&nbsp;Ver elemento
+                </button>
+            </div>
+            <div class="row" style="margin-bottom:10px" *ngIf="botonAceptar == 1">
+                <label >Elemento redactado:</label>
+                <textarea  class="form-control" disabled="disabled">{{textoVerbo}} {{textoObjeto}} {{textoCondicion}} {{textoFinalidad}}</textarea>
+            </div>
+        </div>
+        <div class="container" *ngIf="modalUnidad == 3">
+            <div class="row" style="margin-top:15px; margin-bottom:15px">
+                <label>Esta seguro de eliminar el elemento</label>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-primary col-offset-sm-4" *ngIf="botonAceptar == 1" (click)="c('aceptarElemento')">
+            <span class="fa fa-check"></span>&nbsp;Aceptar
+        </button>
+        <button type="button" class="btn btn-primary col-offset-sm-4" *ngIf="botonAceptar == 2" (click)="c('modificarElemento')">
+            <span class="fa fa-check"></span>&nbsp;Modificar
+        </button>
+        <button type="button" class="btn btn-primary col-offset-sm-4" *ngIf="modalUnidad == 3" (click)="c('eliminarElemento')">
+            <span class="fa fa-check"></span>&nbsp;Eliminar
+        </button>
+        <button type="button" class="btn btn-default" (click)="c('volver')">
+            <span class="fa fa-reply"></span>&nbsp;Volver
+        </button>
+    </div>
+</ng-template>
 
+<ng-template #ventanaResultado let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title">
+            <span *ngIf="modalUnidad == 1">
+                <strong>Resultado nuevo</strong>
+            </span>
+            <span *ngIf="modalUnidad == 2">
+                <strong>Modificar resultado </strong>
+            </span>
+            <span *ngIf="modalUnidad == 3">
+                <strong>Eliminar resultado</strong>
+            </span>       
+        </h4>
+        <button type="button" class="close" aria-label="Close" (click)="d('ClickEnX')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="container" *ngIf="modalUnidad == 1 || modalUnidad == 2">
+            <div class="row" style="margin-top:15px; margin-bottom:15px">
+                <label>Categoria verbo taxonomia de Bloom:</label>
+                <select id="categoriaVerbo" class="form-control" [(ngModel)]="categoriaVerboSeleccionado" (change)="verVerboBloom('idPadre', categoriaVerboSeleccionado)">
+                    <option value="9999">Seleccione ...</option>
+                    <option *ngFor='let categoria of verboBloomCategoria let j = index' value={{categoria.id}}>{{categoria.descripcion}}</option>
+                </select>
+                <label>Verbo:</label>
+                <select id="verbo" class="form-control" [(ngModel)]="verboSeleccionado" (change)="escribeVerboBloom(verboSeleccionado)">
+                    <option value="9999">Seleccione ...</option>
+                    <option *ngFor='let verbo of verboBloomVerbo let j = index' value={{j}}>{{verbo.descripcion}}</option>
+                </select>
+                <label>Verbo seleccionado:</label>
+                <input type="text" class="form-control" value={{textoVerbo}} disabled="disabled">
+            </div>
+            <div class="row">
+                <label>Objeto:</label>
+                <textarea class="form-control" [(ngModel)]="textoObjeto">{{textoObjeto}}</textarea>
+            </div>
+            <div class="row">
+                <label>Condición:</label>
+                <textarea class="form-control" [(ngModel)]="textoCondicion">{{textoCondicion}}</textarea>
+            </div>
+            <div class="row">
+                <label>Finalidad:</label>
+                <textarea class="form-control" [(ngModel)]="textoFinalidad">{{textoFinalidad}}</textarea>
+            </div>
+            <div class="row" style="margin-bottom:10px">
+                <button type="button" class="btn btn-outline-primary col-offset-sm-4" (click)="verElemento()">
+                    <span class="fa fa-bookmark"></span>&nbsp;Ver elemento
+                </button>
+            </div>
+            <div class="row" style="margin-bottom:10px" *ngIf="botonAceptar == 1">
+                <label >Resultado redactado:</label>
+                <textarea  class="form-control" disabled="disabled">{{textoVerbo}} {{textoObjeto}} {{textoCondicion}} {{textoFinalidad}}</textarea>
+            </div>
+        </div>
+        <div class="container" *ngIf="modalUnidad == 3">
+            <div class="row" style="margin-top:15px; margin-bottom:15px">
+                <label>Esta seguro de eliminar el resultado</label>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-primary col-offset-sm-4" *ngIf="botonAceptar == 1" (click)="c('aceptarResultado')">
+            <span class="fa fa-check"></span>&nbsp;Aceptar
+        </button>
+        <button type="button" class="btn btn-primary col-offset-sm-4" *ngIf="botonAceptar == 2" (click)="c('modificarResultado')">
+            <span class="fa fa-check"></span>&nbsp;Modificar
+        </button>
+        <button type="button" class="btn btn-primary col-offset-sm-4" *ngIf="modalUnidad == 3" (click)="c('eliminarResultado')">
+            <span class="fa fa-check"></span>&nbsp;Eliminar
+        </button>
+        <button type="button" class="btn btn-default" (click)="c('volver')">
+            <span class="fa fa-reply"></span>&nbsp;Volver
+        </button>
+    </div>
+</ng-template>

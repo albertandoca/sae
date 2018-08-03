@@ -36,6 +36,7 @@ const routes: Routes = [
             { path: 'registro-asistencia', loadChildren: './asistencia-estudiante/registro-asistencia/registro-asistencia.module#RegistroAsistenciaModule' },
             { path: 'menu-pd', loadChildren: './portafolio-docente/menu-pd/menu-pd.module#MenuPdModule' },
             { path: 'silabo', loadChildren: './portafolio-docente/silabo/silabo.module#SilaboModule' },
+            { path: 'plan-semanal', loadChildren: './portafolio-docente/plan-semanal/plan-semanal.module#PlanSemanalModule' },
             /*{
                 path: 'asistencia-justificacion',
                 loadChildren: './asistencia-justificacion/asistencia-justificacion.module#AsistenciaJustificacionModule'

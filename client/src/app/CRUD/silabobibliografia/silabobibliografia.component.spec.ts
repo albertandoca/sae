@@ -1,18 +1,18 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { SilaboBiliografiaComponent } from './silabobiliografia.component';
+import { SilaboBibliografiaComponent } from './silabobibliografia.component';
 
-describe('SilaboBiliografiaComponent', () => {
-   let component: SilaboBiliografiaComponent;
-   let fixture: ComponentFixture<SilaboBiliografiaComponent>;
+describe('SilaboBibliografiaComponent', () => {
+   let component: SilaboBibliografiaComponent;
+   let fixture: ComponentFixture<SilaboBibliografiaComponent>;
 
    beforeEach(async(() => {
       TestBed.configureTestingModule({
-         declarations: [ SilaboBiliografiaComponent ]
+         declarations: [ SilaboBibliografiaComponent ]
       }).compileComponents();
    }));
 
    beforeEach(() => {
-      fixture = TestBed.createComponent(SilaboBiliografiaComponent);
+      fixture = TestBed.createComponent(SilaboBibliografiaComponent);
       component = fixture.componentInstance;
       fixture.detectChanges();
    });

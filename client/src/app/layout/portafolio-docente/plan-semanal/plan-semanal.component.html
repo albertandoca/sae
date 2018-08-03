@@ -1,0 +1,377 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 text-right">
+        <h2 style="margin-top:0px">Plan de clase semanal</h2>
+        </div>
+    </div>
+    
+    <div class="row" style="margin-top:15px">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <label for="Datos de Identificación">Datos de Identificación:</label>
+        <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
+            <div class="row">
+            <li>Semana:</li>
+            <h6><select id="semana" class="form-control" [(ngModel)]="numeroSemana" ng-change="semana">
+            <option *ngFor="let semanas of semana let j=index" value={{j}} >{{semanas}}</option>
+            </select></h6>
+            </div>
+        </div>
+        <table  class="table table-striped table-bordered">
+            <thead class="thead-dark">
+            <tr>
+                <th>Semana</th>
+                <th>Periodo Academico</th> 
+                <th>Periodo Lectivo</th>
+                <th>Paralelo</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><select id="semana" class="form-control" [(ngModel)]="numeroSemana" ng-change="semana">
+                    <option *ngFor="let semanas of semana let j=index" value={{j}} >{{semanas}}</option>
+                </select></td>
+                <td>{{periodo[0].PeriodoAcademico}}</td>
+                <td>{{periodo[0].PeriodoLectivo}}</td>
+                <td>
+                    <select id="paralelo" class="form-control" [(ngModel)]="paraleloSeleccionado">
+                    <option *ngFor="let paralelos of paralelo let j=index" value={{j}} >{{paralelos.descripcion}}</option>
+                </select>
+            </td>
+            </tr>
+            </tbody>
+            </table>
+    </div>
+    </div>
+    
+    <div class="row" style="margin-top:15px">
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <div class="card-block">
+            <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+                <ngb-panel>
+                    <ng-template ngbPanelTitle>
+                        <span>&#9999; <b>Tema</b></span>
+                        <div class="text-right" style="margin-top:-25px">
+                            <button type="button"  class="btn btn-primary btn-sm" (click)="openTema(tema)">
+                                <span class="fa fa-plus"></span>&nbsp;Añadir
+                            </button>
+                        </div>
+                    </ng-template>
+                    <ng-template ngbPanelContent>
+                        <div class="row" *ngFor="let textoTema of textosTema let i = index">
+                            <p>{{i+1}} {{textoTema}}</p>
+                        </div>
+                    </ng-template>
+                </ngb-panel>
+            </ngb-accordion>
+            </div>
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <div class="card-block">
+                <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+                    <ngb-panel>
+                            <ng-template ngbPanelTitle>
+                            <span>&#9999; <b>Subtema</b></span>
+                            <div class="text-right" style="margin-top:-25px">
+                                <button type="button"  class="btn btn-primary btn-sm" (click)="openSubtema(subtema)">
+                                    <span class="fa fa-plus"></span>&nbsp;Añadir
+                                </button>
+                            </div> 
+                            </ng-template>
+                            <ng-template ngbPanelContent>
+                                    <div class="row" *ngFor="let textosSubtema of textoSubtema let i = index">
+                                    <p>{{i+1}} {{textosSubtema}}</p>
+                                    </div>
+                            </ng-template>
+                        </ngb-panel>
+                </ngb-accordion>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="card-block">
+            <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+            <ngb-panel>
+                <ng-template ngbPanelTitle>
+                    <span>&#9999; <b>Objetivos de aprendizaje</b></span>  
+                    <div class="text-right" style="margin-top:-25px">
+                        <button type="button"  class="btn btn-primary btn-sm" (click)="openObjetivo(objetivo)">
+                            <span class="fa fa-plus"></span>&nbsp;Añadir
+                        </button>
+                    </div>
+                </ng-template>
+                    <ng-template ngbPanelContent>
+                            <select id="objetivo" class="form-control" [(ngModel)]="objetivoSeleccionado">
+                                    <option *ngFor="let objetivos of objetivo let i=index" value={{i}} >{{objetivos.objetivoParte1}}</option>
+                                    <option *ngFor="let objetivos of objetivo" >{{objetivos.objetivoParte2}}</option>
+                                    <option *ngFor="let objetivos of objetivo" >{{objetivos.objetivoParte3}}</option>
+                                    <option *ngFor="let objetivos of objetivo" >{{objetivos.objetivoParte4}}</option>
+                                </select>
+                        <div class="row" *ngFor="let textosObjetivo of textoObjetivo let i = index">
+                            <p>{{i+1}} {{textosObjetivo}}</p>
+                        </div>
+                </ng-template>
+                </ngb-panel>
+                <ngb-panel>
+                    <ng-template ngbPanelTitle>
+                        <span>&#9999; <b>Eje Transversal</b></span> 
+                        <div class="text-right" style="margin-top:-25px">
+                            <button type="button"  class="btn btn-primary btn-sm" (click)="openTema(tema)">
+                                <span class="fa fa-plus"></span>&nbsp;Añadir
+                            </button>
+                        </div> 
+                    </ng-template>
+                        <ng-template ngbPanelContent>
+                            <h6>Ingrese los ejes</h6>
+                            <select id="ejeTrans" class="form-control" [(ngModel)]="ejeSeleccionado">
+                                <option *ngFor="let eje of ejeTransversal let a=index" value={{a}} >{{eje.detalle}}</option>
+                            </select> 
+                    </ng-template>
+                    </ngb-panel>
+            </ngb-accordion>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row" style="margin-top:15px">
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <label for="Plan">Plan:</label>
+        <div class="card-block">
+            <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+                    <ngb-panel>
+                        <ng-template ngbPanelTitle>
+                            <span>&#9999; <b>Metodo</b></span>
+                            <div class="text-right" style="margin-top:-25px">
+                                <button type="button"  class="btn btn-primary btn-sm" (click)="openTema(tema)">
+                                    <span class="fa fa-plus"></span>&nbsp;Añadir
+                                </button>
+                            </div>
+                        </ng-template>
+                        <ng-template ngbPanelContent>
+                            <h6>Seleccione los metodos</h6>
+                            <select id="metodo" class="form-control" [(ngModel)]="metodoSeleccionado">
+                                <option *ngFor="let metodo of metodologia let j=index" value={{j}} >{{metodo.estrategia}}</option>
+                            </select>
+                        </ng-template>
+                    </ngb-panel>
+                    <ngb-panel>
+                        <ng-template ngbPanelTitle>
+                        <span>&#9999; <b>Recursos</b></span> 
+                        <div class="text-right" style="margin-top:-25px">
+                            <button type="button"  class="btn btn-primary btn-sm" (click)="openTema(tema)">
+                                <span class="fa fa-plus"></span>&nbsp;Añadir
+                            </button>
+                        </div>
+                        </ng-template>
+                        <ng-template ngbPanelContent>
+                            <h6>Seleccione los recursos</h6>
+                            <select id="recursos" class="form-control" [(ngModel)]="recursoSeleccionado">
+                                <option *ngFor="let recurso of recursos let j=index" value={{j}} >{{recurso.tipoMaterial}}</option>
+                            </select>   
+                        </ng-template>
+                    </ngb-panel>
+                    <ngb-panel>
+                    <ng-template ngbPanelTitle>
+                        <span>&#9999; <b>Prerrequisitos</b></span>
+                        <div class="text-right" style="margin-top:-25px">
+                            <button type="button"  class="btn btn-primary btn-sm" (click)="openTema(tema)">
+                                <span class="fa fa-plus"></span>&nbsp;Añadir
+                            </button>
+                        </div>
+                    </ng-template>
+                        <ng-template ngbPanelContent>
+                            <h6>Ingrese los prerrequisitos</h6>
+                            <select id="prerrequisitos" class="form-control" [(ngModel)]="prerrequisitosSeleccionado">
+                                <option>Seleccione...</option>
+                            </select>  
+                    </ng-template>
+                    </ngb-panel>
+                </ngb-accordion>
+            </div>
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <div class="card-block" style="margin-top:30px">
+                    <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+                        <ngb-panel>
+                            <ng-template ngbPanelTitle>
+                            <span>&#9999; <b>Desarrollo de la clase</b></span>
+                            <div class="text-right" style="margin-top:-25px">
+                                <button type="button"  class="btn btn-primary btn-sm" (click)="openTema(tema)">
+                                    <span class="fa fa-plus"></span>&nbsp;Añadir
+                                </button>
+                            </div>
+                            </ng-template>
+                            <ng-template ngbPanelContent>
+                                <h6>Ingrese los parametros de desarrollo</h6>
+                                <input type="text" id="desarrollo" class="form-control" [(ngModel)]="desarrolloSeleccionado">    
+                            </ng-template>
+                            </ngb-panel>
+                            <ngb-panel>
+                            <ng-template ngbPanelTitle>
+                                <span>&#9999; <b>Aplicación de conocimientos</b></span>
+                                <div class="text-right" style="margin-top:-25px">
+                                    <button type="button"  class="btn btn-primary btn-sm" (click)="openTema(tema)">
+                                        <span class="fa fa-plus"></span>&nbsp;Añadir
+                                    </button>
+                                </div>
+                            </ng-template>
+                                <ng-template ngbPanelContent>
+                                    <h6>Ingrese los parametros de aplicación</h6>
+                                    <input type="text" id="aplicacion" class="form-control" [(ngModel)]="aplicacionSeleccionado">  
+                            </ng-template>
+                            </ngb-panel>
+                            <ngb-panel>
+                            <ng-template ngbPanelTitle>
+                                <span>&#9999; <b>Evaluación del proceso</b></span>
+                                <div class="text-right" style="margin-top:-25px">
+                                    <button type="button"  class="btn btn-primary btn-sm" (click)="openTema(tema)">
+                                        <span class="fa fa-plus"></span>&nbsp;Añadir
+                                    </button>
+                                </div>
+                            </ng-template>
+                                <ng-template ngbPanelContent>
+                                    <h6>Ingrese los parametros de evaluación</h6>
+                                        <select id="evaluacion" class="form-control" [(ngModel)]="evaluacionSeleccionado">
+                                            <option>Seleccione...</option>
+                                        </select> 
+                            </ng-template>
+                            </ngb-panel>                
+                    </ngb-accordion>
+                </div>
+        </div>
+    </div>
+    <div class="row" style="margin-top:15px">
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <label for="Actividades">Actividades y tareas:</label>
+            <div class="card-block">
+                <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+                        <ngb-panel>
+                            <ng-template ngbPanelTitle>
+                                <span>&#9999; <b>Prácticas de Aprendizaje</b></span>
+                                <div class="text-right" style="margin-top:-25px">
+                                    <button type="button"  class="btn btn-primary btn-sm" (click)="openTema(tema)">
+                                        <span class="fa fa-plus"></span>&nbsp;Añadir
+                                    </button>
+                                </div>
+                            </ng-template>
+                            <ng-template ngbPanelContent>
+                                <h6>Ingrese las actividades</h6>
+                                <input type="text" id="actividades" class="form-control" [(ngModel)]="actividadesSeleccionado">
+                            </ng-template>
+                        </ngb-panel>
+                </ngb-accordion> 
+            </div>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="card-block" style="margin-top:30px">
+                <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+                        <ngb-panel>
+                            <ng-template ngbPanelTitle>
+                                <span>&#9999; <b>Trabajo Autónomo</b></span>
+                                <div class="text-right" style="margin-top:-25px">
+                                    <button type="button"  class="btn btn-primary btn-sm" (click)="openTema(tema)">
+                                        <span class="fa fa-plus"></span>&nbsp;Añadir
+                                    </button>
+                                </div>
+                            </ng-template>
+                            <ng-template ngbPanelContent>
+                                <h6>Ingrese las actividades de trabajo</h6>
+                                <input type="text" id="trabajo" class="form-control" [(ngModel)]="trabajoSeleccionado">
+                            </ng-template>
+                        </ngb-panel>
+                </ngb-accordion> 
+            </div>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                <div class="card-block" style="margin-top:30px">
+                    <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+                            <ngb-panel>
+                                <ng-template ngbPanelTitle>
+                                    <span>&#9999; <b>Observaciones</b></span>
+                                    <div class="text-right" style="margin-top:-25px">
+                                        <button type="button"  class="btn btn-primary btn-sm" (click)="openTema(tema)">
+                                            <span class="fa fa-plus"></span>&nbsp;Añadir
+                                        </button>
+                                    </div>
+                                </ng-template>
+                                <ng-template ngbPanelContent>
+                                    <h6>Ingrese las observaciones</h6>
+                                    <input type="text" id="observacion" class="form-control" [(ngModel)]="observacionSeleccionado">
+                                </ng-template>
+                            </ngb-panel>
+                    </ngb-accordion> 
+                </div>
+            </div>
+    </div>
+    
+    
+    <div class="row" style="margin-top:15px">
+        <div class="col-md-12 text-right">
+        <footer>
+        <button type="button" class="btn btn-primary">
+            <span class="fa fa-bookmark-o"></span>&nbsp;Guardar
+            </button>
+        <button type="button" class="btn btn-secondary">
+            <span class="fa fa-file-pdf-o"></span>&nbsp;Generar PDF
+        </button>
+        </footer>
+        </div>
+    </div>
+</div>
+
+
+<ng-template #tema let-c="close" let-d="dismiss">
+        <div class="modal-header">
+            <h4 class="modal-title">
+                <strong>Seleccione tema</strong>
+            </h4>
+            <button type="button" class="close" aria-label="Close" (click)="d('ClickEnX')">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="container-fluid">
+                    <h6>Seleccione los temas a tratar</h6>
+                    <select id="tema" class="form-control" [(ngModel)]="temaSeleccionado" (change)="seleccionaTema()">
+                        <option value="9999">Seleccione ...</option>
+                        <option *ngFor="let tema of temas let i=index" value={{i}} >{{tema.objeto}}</option>
+                    </select>
+                    <textarea class="form-control" style="margin-top:15px" [(ngModel)]="uno">{{uno}}</textarea>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary col-offset-sm-4" (click)="c('anadir')">
+                <span class="fa fa-check"></span>&nbsp;Añadir
+            </button> 
+            <button type="button" class="btn btn-default" (click)="c('volver')">
+                <span class="fa fa-reply"></span>&nbsp;Volver
+            </button>
+        </div>
+    </ng-template>
+
+    <ng-template #subtema let-c="close" let-d="dismiss">
+            <div class="modal-header">
+                <h4 class="modal-title">
+                    <strong>Seleccione los Subtema</strong>
+                </h4>
+                <button type="button" class="close" aria-label="Close" (click)="d('ClickEnX')">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                        <h6>Seleccione los Subtemas a tratar</h6>
+                        <select id="subtema" class="form-control" [(ngModel)]="subtemaSeleccionado" (change)="seleccionaSubtema()">
+                            <option value="9999">Seleccione ...</option>
+                            <option *ngFor="let subtema of temas let i=index" value={{i}} >{{subtema.objeto}}</option>
+                        </select>
+                        <textarea class="form-control" style="margin-top:15px" [(ngModel)]="subtemaIngresado">{{subtemaIngresado}}</textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary col-offset-sm-4" (click)="c('anadir')">
+                    <span class="fa fa-check"></span>&nbsp;Añadir
+                </button> 
+                <button type="button" class="btn btn-default" (click)="c('volver')">
+                    <span class="fa fa-reply"></span>&nbsp;Volver
+                </button>
+            </div>
+        </ng-template>

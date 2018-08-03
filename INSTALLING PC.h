@@ -20,7 +20,7 @@ sudo apt install gradle
 sudo update-alternatives --config javac /// Y SELECCIONAS EL 1.8
 sudo a2enmod rewrite
 
-#Agregar esto a /etc/apache2/sites-enabled/000default.conf
+#Agregar esto a /etc/apache2/sites-enabled/000-default.conf
     <Directory /var/www/html>
         Options Indexes FollowSymLinks MultiViews
         AllowOverride All
@@ -30,7 +30,3 @@ sudo a2enmod rewrite
 
 sudo service apache2 restart
 
-git remote add upstream "https://github.com/YaviracTec/sae.git"
-git pull upstream master
-
-npm run build

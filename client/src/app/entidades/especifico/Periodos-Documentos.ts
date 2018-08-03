@@ -1,7 +1,8 @@
 export class PeriodosDocumentos {
-    idPortafolioDocente: number;
+    idPortafolioDocenteResumen: number;
     idPeriodoLectivo: number;
     descripcion: string;
     estadoComponente: string;
     idEstadoComponentePd: number;
+    idPersona: number;
 }

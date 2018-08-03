@@ -107,5 +107,10 @@ export class MenuPdComponent implements OnInit {
         this.guardarDatos();
         this.router.navigate(['/silabo']);
     }
+
+    planSemanal() {
+        this.guardarDatos();
+        this.router.navigate(['/plan-semanal']);
+    }
     imprimir() {}
 }

@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { SilaboBiliografiaComponent } from './silabobiliografia.component';
+import { SilaboBibliografiaComponent } from './silabobibliografia.component';
 
 const routes: Routes = [
-   { path: '', component: SilaboBiliografiaComponent }
+   { path: '', component: SilaboBibliografiaComponent }
 ];
 
 @NgModule({
    imports: [RouterModule.forChild(routes)],
    exports: [RouterModule]
 })
-export class SilaboBiliografiaRoutingModule { }
+export class SilaboBibliografiaRoutingModule { }

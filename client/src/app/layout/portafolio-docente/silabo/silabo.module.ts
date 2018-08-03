@@ -6,6 +6,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SilaboRoutingModule } from './silabo-routing.module';
 import { SilaboComponent } from './silabo.component';
 import { PortafolioDocenteService } from '../portafolio-docente.service';
+import { VerboBloomService } from '../../../CRUD/verbobloom/verbobloom.service';
 import { Router } from '@angular/router';
 
 
@@ -17,7 +18,7 @@ import { Router } from '@angular/router';
     HttpModule,
     SilaboRoutingModule
   ],
-  providers: [PortafolioDocenteService],
+  providers: [PortafolioDocenteService, VerboBloomService],
   declarations: [SilaboComponent]
 })
 export class SilaboModule { }
